@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日语语法复习 · 2026-11-22</title>
+<style>
+  :root{
+    --ink:#23201c;
+    --ink-2:#5b544c;
+    --ink-3:#8a8177;
+    --line:#ddd7cd;
+    --line-2:#ece7de;
+    --bg:#f7f5f1;
+    --card:#fffdfa;
+    --accent:#2f6b63;
+    --accent-soft:#e8f0ee;
+    --warn:#a8452f;
+    --warn-soft:#fbeee9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:40px 20px 80px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    font-size:15px;
+    line-height:1.78;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+
+  header.title{
+    padding-bottom:22px;
+    margin-bottom:34px;
+    border-bottom:2px solid var(--ink);
+  }
+  header.title h1{
+    margin:0 0 8px;
+    font-size:27px;
+    letter-spacing:0.5px;
+    font-weight:700;
+  }
+  header.title .sub{
+    color:var(--ink-3);
+    font-size:13.5px;
+    letter-spacing:0.3px;
+  }
+
+  section{margin-bottom:38px;}
+  h2{
+    font-size:19px;
+    margin:0 0 14px;
+    padding-left:12px;
+    border-left:4px solid var(--accent);
+    line-height:1.4;
+    font-weight:700;
+  }
+  h2 .num{
+    color:var(--accent);
+    font-size:13px;
+    font-weight:600;
+    margin-right:8px;
+    letter-spacing:1px;
+  }
+  h3{
+    font-size:15.5px;
+    margin:22px 0 8px;
+    font-weight:700;
+  }
+  p{margin:0 0 10px;}
+  .muted{color:var(--ink-2);}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 22px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0 16px;
+    font-size:14px;
+    background:var(--card);
+  }
+  th,td{
+    border:1px solid var(--line);
+    padding:8px 11px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:#f2efe9;
+    font-weight:700;
+    font-size:13.5px;
+  }
+  td.jp,th.jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+
+  .jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+  code{
+    background:#f0ede6;
+    padding:1px 5px;
+    border-radius:3px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+  }
+  .key{
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14.5px;
+  }
+  .key b{color:var(--accent);}
+  .pit{
+    background:var(--warn-soft);
+    border-left:3px solid var(--warn);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14px;
+  }
+  .pit b{color:var(--warn);}
+
+  .no{color:var(--warn);}
+  .yes{color:var(--accent);font-weight:600;}
+
+  ul.tight{margin:8px 0 12px;padding-left:22px;}
+  ul.tight li{margin-bottom:5px;}
+
+  .flow{
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+    background:#f0ede6;
+    padding:12px 15px;
+    border-radius:4px;
+    white-space:pre;
+    overflow-x:auto;
+    line-height:1.7;
+    margin:12px 0;
+  }
+
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:12px 16px;
+    margin-bottom:9px;
+  }
+  details summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:14.5px;
+    list-style:none;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::before{
+    content:"▸ ";
+    color:var(--accent);
+  }
+  details[open] summary::before{content:"▾ ";}
+  details .ans{
+    margin-top:9px;
+    padding-top:9px;
+    border-top:1px dashed var(--line);
+    font-size:14px;
+    color:var(--ink-2);
+  }
+  details .ans b{color:var(--accent);}
+
+  footer{
+    margin-top:44px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    color:var(--ink-3);
+    font-size:13px;
+  }
+
+  @media print{
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .card,details{break-inside:avoid;}
+    table{break-inside:avoid;}
+    details{border:none;padding:0;}
+    details .ans{display:block;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="title">
+  <h1>日语语法复习 · 授受 / ところ / 修饰链 / てくる</h1>
+  <div class="sub">2026-11-22 当天所问 14 项 · 已按主题重组，非时间顺序</div>
+</header>
+
+<!-- ============ 一 ============ -->
+<section>
+  <h2><span class="num">01</span>授受三兄弟：あげる / くれる / もらう</h2>
+
+  <p class="muted">判定只问两件事：<b>东西有没有流向"我"</b>，<b>主语是给的人还是收的人</b>。</p>
+
+  <table>
+    <tr><th style="width:22%">句型</th><th style="width:26%">主语是谁</th><th style="width:26%">东西往哪走</th><th>例句</th></tr>
+    <tr><td><b>あげる</b></td><td>给的人</td><td>我（或己方）→ 别人</td><td class="jp">田中さんに本をあげた</td></tr>
+    <tr><td><b>くれる</b></td><td>给的人</td><td>别人 → 我</td><td class="jp">田中さんが本をくれた</td></tr>
+    <tr><td><b>もらう</b></td><td><b>收的人</b></td><td>别人 → 我（我收到）</td><td class="jp">田中さんに本をもらった</td></tr>
+  </table>
+
+  <div class="key">
+    <b>主语决定动词：</b>主语是"给的人"就用 あげる / くれる；主语是"收的人"就用 もらう。<br>
+    不能"田中当主语 + もらう"来表达"他送我"。
+  </div>
+
+  <h3>助词决定排除法</h3>
+  <table>
+    <tr><th style="width:30%">形式</th><th style="width:22%">施予者的助词</th><th>例句</th></tr>
+    <tr><td>～てくれる</td><td><b>が</b></td><td class="jp">田中さん<b>が</b>送ってくれた</td></tr>
+    <tr><td>～てもらう</td><td><b>に</b></td><td class="jp">（私が）田中さん<b>に</b>送ってもらった</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>不要过度推广：</b>「小句子里不能用もらう」是错的。定语从句里照样能用，只要换主语：<br>
+    <span class="jp">田中さん<b>が</b>送って<b>くれた</b>カード</span> ／ <span class="jp">田中さん<b>に</b>送って<b>もらった</b>カード</span>　两句都成立。<br>
+    另外 <span class="jp">田中さんがもらった</span> 本身也通——意思是"田中收到了"。
+  </div>
+
+  <h3>附带规则：定语从句里的主语用 が</h3>
+  <ul class="tight">
+    <li><span class="yes">✓</span> <span class="jp">木村さん<b>が</b>着ていたシャツ</span></li>
+    <li><span class="no">✗</span> <span class="jp">木村さん<b>は</b>着ていたシャツ</span>（は 不能在小句子里表主题）</li>
+  </ul>
+</section>
+
+<!-- ============ 二 ============ -->
+<section>
+  <h2><span class="num">02</span>形式名词：ところ / こと</h2>
+
+  <p class="muted"><b>ところ</b> 既能做实义名词（地方），也做形式名词；<b>こと</b> 基本只做形式名词。做形式名词时没有实义，只负责把前面的内容"打成名词"，好让后面的句型接上去——日语靠它们造出动词本身表达不了的语法意义。</p>
+
+  <h3>ところ 的三层含义（核心意象＝"一个点"）</h3>
+  <table>
+    <tr><th style="width:26%">含义</th><th style="width:32%">用法</th><th>例句</th></tr>
+    <tr><td>空间上的点</td><td>地方、位置</td><td class="jp">静かな<b>ところ</b>／先生の<b>ところ</b></td></tr>
+    <tr><td>时间上的点</td><td>～ところだ（阶段）</td><td class="jp">着いた<b>ところ</b>だ</td></tr>
+    <tr><td>话头上的点</td><td>ところで（话说回来）</td><td class="jp"><b>ところで</b>、明日の会議は？</td></tr>
+  </table>
+
+  <h3>～ところだ 的三个阶段</h3>
+  <table>
+    <tr><th style="width:30%">接续</th><th style="width:22%">意思</th><th>例句</th></tr>
+    <tr><td>辞书形 ＋ ところだ</td><td><b>正要</b>…（未开始）</td><td class="jp">今から出かける<b>ところ</b>です</td></tr>
+    <tr><td>ている ＋ ところだ</td><td><b>正在</b>…（进行中）</td><td class="jp">今、食べている<b>ところ</b>です</td></tr>
+    <tr><td>た形 ＋ ところだ</td><td><b>刚刚</b>…（已完成）</td><td class="jp">今、着いた<b>ところ</b>です</td></tr>
+  </table>
+
+  <div class="key">
+    <b>たところだ vs たばかりだ：</b>ところ 卡得紧（就一两分钟），ばかり 松得多（上个月也算"刚"）。
+  </div>
+
+  <h3>こと 系：谁做决定</h3>
+  <table>
+    <tr><th style="width:16%"></th><th style="width:42%">一次决定</th><th>持续状态／规矩</th></tr>
+    <tr><td><b>自己</b></td><td>～こと<b>にする</b>（我决定）</td><td>～こと<b>にしている</b>（我习惯／自我规定）</td></tr>
+    <tr><td><b>客观</b></td><td>～こと<b>になる</b>（结果定下来）</td><td>～こと<b>になっている</b>（规定如此）</td></tr>
+  </table>
+
+  <div class="key">
+    <span class="jp">ひっこすことになりました</span> 的重点在"结果变成这样"，说话人躲在结果后面，语气谦虚、不居功。<br>
+    自己拍板的事才用 <span class="jp">ことにしました</span>。
+  </div>
+
+  <h3>になる / にする 的接续</h3>
+  <table>
+    <tr><th style="width:26%">前接词类</th><th style="width:34%">形式</th><th>例句</th></tr>
+    <tr><td>名词</td><td>名词 ＋ になる</td><td class="jp">大学生になる</td></tr>
+    <tr><td>な形容词</td><td>な形容词 ＋ になる</td><td class="jp">静かになる</td></tr>
+    <tr><td><b>い形容词</b></td><td>い → <b>く</b> ＋ なる</td><td class="jp">寒<b>く</b>なる</td></tr>
+    <tr><td><b>动词</b></td><td>动词 ＋ <b>こと</b> ＋ になる</td><td class="jp">引っ越す<b>こと</b>になる</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>动词不能直接接 になる／にする。</b><br>
+    <span class="no">✗</span> <span class="jp">引っ越すになる</span>　<span class="no">✗</span> <span class="jp">食べるにする</span><br>
+    <span class="yes">✓</span> <span class="jp">引っ越す<b>こと</b>になる</span>　<span class="yes">✓</span> <span class="jp">食べる<b>こと</b>にする</span>
+  </div>
+
+  <p class="muted"><b>另一个「にします」：</b>接名词时表示"就选这个"。<span class="jp">コーヒーにします</span>（我要咖啡）——与 <span class="jp">ことにする</span> 同源，只是接的是名词。</p>
+</section>
+
+<!-- ============ 三 ============ -->
+<section>
+  <h2><span class="num">03</span>修饰链：排序题全考这里</h2>
+
+  <h3>四种词接名词的方式</h3>
+  <table>
+    <tr><th style="width:24%">词类</th><th style="width:28%">接法</th><th>例句</th></tr>
+    <tr><td><b>い形容词</b></td><td><b>直接接</b></td><td class="jp">あまいくだもの／明るいシャツ</td></tr>
+    <tr><td><b>な形容词</b></td><td>加 <b>な</b></td><td class="jp">きれい<b>な</b>花</td></tr>
+    <tr><td><b>名词</b></td><td>加 <b>の</b></td><td class="jp">形<b>の</b>くだもの／あんな色<b>の</b>シャツ</td></tr>
+    <tr><td><b>动词</b>（た形・辞书形）</td><td><b>直接接</b></td><td class="jp">着ていたシャツ／明日来る人</td></tr>
+  </table>
+
+  <div class="key">
+    <b>只有名词需要 の，动词完全不需要。</b><br>
+    <span class="no">✗</span> <span class="jp">着ていた<b>の</b>シャツ</span>　<span class="yes">✓</span> <span class="jp">着ていたシャツ</span>
+  </div>
+
+  <h3>动词修饰名词＝定语从句</h3>
+  <p class="muted">动词的た形／辞书形／ない形都可以直接放在名词前，相当于"一个整句打包成形容词"。</p>
+  <div class="flow">[木村さんが着ていた] シャツ
+ └── 一整个小句子 ──┘   ↑ 被修饰的名词</div>
+  <table>
+    <tr><th style="width:30%">形式</th><th style="width:34%">修饰名词</th><th>意思</th></tr>
+    <tr><td>辞书形</td><td class="jp">着るシャツ</td><td>要穿的衬衫</td></tr>
+    <tr><td>た形</td><td class="jp">着ていたシャツ</td><td>（当时）穿着的衬衫</td></tr>
+    <tr><td>ている</td><td class="jp">着ている人</td><td>正穿着的人</td></tr>
+  </table>
+
+  <h3>な形容词连接：で 还是 に</h3>
+  <table>
+    <tr><th style="width:26%">后面接什么</th><th style="width:20%">用哪个</th><th>例句</th></tr>
+    <tr><td>形容词／并列句</td><td><b>で</b></td><td class="jp">静か<b>で</b>いい／静か<b>で</b>明るい部屋</td></tr>
+    <tr><td>动词（副词）</td><td><b>に</b></td><td class="jp">静か<b>に</b>話す／静か<b>に</b>ドアを閉める</td></tr>
+    <tr><td>名词</td><td><b>な</b></td><td class="jp">静か<b>な</b>部屋</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>✗ 静かにいい</b>　→　<b>✓ 静かでいい</b>　（に 只能修饰动词，不能修饰形容词 いい）<br>
+    同型：きれい<b>で</b>いい、便利<b>で</b>いい。
+  </div>
+
+  <h3>排序题推演示例</h3>
+  <div class="flow">① まるい + 形 + の  →  ② 赤くて + あまい  →  くだもの
+   （什么样的形状）      （什么颜色和味道）      （中心名词）</div>
+  <ul class="tight">
+    <li><b>あまい</b>（い形容词原形）→ 只能直接接名词 → 必定最后一格（紧贴 くだもの）</li>
+    <li><b>赤くて</b>（て形）→ 必须往下连另一个形容词 → 只能站在 あまい 前</li>
+    <li><b>の</b> → 必须紧跟名词 形，跑不掉</li>
+  </ul>
+</section>
+
+<!-- ============ 四 ============ -->
+<section>
+  <h2><span class="num">04</span>てくる / ていく：方向感</h2>
+
+  <p class="muted">视点固定在说话人此刻站的位置。</p>
+  <div class="flow">[对方那边] ──てくる（朝我来）──→ [我现在这里] ──ていく（离我去）──→ [别处]</div>
+
+  <table>
+    <tr><th style="width:24%">形式</th><th style="width:30%">意思</th><th>例句</th></tr>
+    <tr><td><b>～てくる</b></td><td>做完回来／朝我靠近</td><td class="jp">先生に出してきました</td></tr>
+    <tr><td><b>～ていく</b></td><td>做完离开／离我而去</td><td class="jp">出していきました</td></tr>
+  </table>
+
+  <h3>てくる 的衍生义（高频）</h3>
+  <table>
+    <tr><th style="width:30%">用法</th><th style="width:36%">例句</th><th>意思</th></tr>
+    <tr><td>去去就回</td><td class="jp">ちょっと行ってきます</td><td>我出去一下</td></tr>
+    <tr><td>出现／开始</td><td class="jp">雨が降ってきた</td><td>下起雨来了</td></tr>
+    <tr><td>变化</td><td class="jp">わかってきた</td><td>开始明白了</td></tr>
+  </table>
+
+  <div class="key">
+    <b>口诀：</b>去了还回来 → てくる；去了不回来 → ていく。
+  </div>
+
+  <h3>～に行く（去做某事）</h3>
+  <div class="flow">动词ます形去ます ＋ に ＋ 行く
+出します → 出し ＋ に ＋ 行く ＝ 出しに行く（去交）</div>
+  <p class="muted">行く 本身是持续动作，所以 <span class="jp">行っています</span> 可以表示"正在去"：<span class="jp">今、出しに行っています</span>。</p>
+
+  <div class="pit">
+    <b>瞬间动词 ＋ ている＝结果状态，不是"正在"。</b><br>
+    <span class="jp">宿題を出しています</span> ＝ 已经交了／平时都交，<b>不是</b>"正在交"。<br>
+    同型：<span class="jp">結婚しています</span>（已婚）、<span class="jp">知っています</span>（知道）。
+  </div>
+</section>
+
+<!-- ============ 五 ============ -->
+<section>
+  <h2><span class="num">05</span>助词专题</h2>
+
+  <h3>しか ＋ 否定</h3>
+  <table>
+    <tr><th style="width:24%">形式</th><th style="width:28%">句尾</th><th>例句</th></tr>
+    <tr><td>だけ</td><td><b>肯定</b></td><td class="jp">一週間<b>だけ</b>いられ<b>ます</b></td></tr>
+    <tr><td>しか</td><td><b>否定</b></td><td class="jp">一週間<b>しか</b>いられ<b>ません</b></td></tr>
+  </table>
+  <div class="pit">
+    去掉 しか 意思会反转：<span class="jp">一週間いられません</span> ＝ 待不了<b>一周</b>（连一周都不到）。<br>
+    <span class="jp">いられません</span> 是 <span class="jp">いる → いられる（可能形）→ いられない</span> 的变化，意为"不能待"。
+  </div>
+
+  <h3>疑问词 ＋ でも / も</h3>
+  <table>
+    <tr><th style="width:30%">形式</th><th style="width:26%">意思</th><th>句尾要求</th></tr>
+    <tr><td>いつ<b>でも</b>・どこ<b>でも</b>・だれ<b>でも</b></td><td>任何时候／任何地方／谁都可以</td><td><b>肯定</b></td></tr>
+    <tr><td>どこから<b>でも</b></td><td>从任何地方都（でも 可加在助词后）</td><td><b>肯定</b></td></tr>
+    <tr><td>どこに<b>も</b>・だれに<b>も</b>・なに<b>も</b></td><td>哪里都不／谁都不／什么都不</td><td><b>否定</b></td></tr>
+  </table>
+  <p class="muted"><b>陷阱：</b><span class="jp">いつまで</span>（到什么时候）≠ <span class="jp">いつまでも</span>（永远）。</p>
+
+  <h3>について vs のこと</h3>
+  <table>
+    <tr><th style="width:26%">形式</th><th style="width:34%">语法角色</th><th>后面还要助词吗</th></tr>
+    <tr><td><b>について</b></td><td>复合助词（标记"关于"）</td><td><b>不要</b></td></tr>
+    <tr><td><b>のこと</b></td><td>名词短语（"…的事"）</td><td><b>要</b>，按动词选 を／が／は</td></tr>
+  </table>
+  <ul class="tight">
+    <li><span class="yes">✓</span> <span class="jp">歴史<b>について</b>調べています</span></li>
+    <li><span class="yes">✓</span> <span class="jp">歴史<b>のことを</b>調べています</span></li>
+    <li><span class="no">✗</span> <span class="jp">歴史<b>のことが</b>調べています</span>（が 让"历史"变成调查主体）</li>
+  </ul>
+  <p class="muted">修饰名词时变 <span class="jp">についての</span>：<span class="jp">歴史についての本</span>。</p>
+
+  <h3>によって（五个用法）</h3>
+  <table>
+    <tr><th style="width:26%">用法</th><th style="width:22%">意思</th><th>例句</th></tr>
+    <tr><td>① 被动施动者</td><td>被／由</td><td class="jp">ピカソによって描かれた</td></tr>
+    <tr><td>② 手段</td><td>通过</td><td class="jp">インターネットによって情報を得る</td></tr>
+    <tr><td>③ 原因</td><td>由于</td><td class="jp">事故によって遅れた</td></tr>
+    <tr><td>④ 差异基准</td><td>因人而异（最高频）</td><td class="jp">人によって考え方が違う</td></tr>
+    <tr><td>⑤ 构成</td><td>由…构成</td><td class="jp">10人によって構成されている</td></tr>
+  </table>
+
+  <div class="key">
+    <b>被动里的换位：</b>主动句 <span class="jp">ピカソ<b>が</b>絵<b>を</b>描いた</span> → 被动 <span class="jp">絵<b>が</b>ピカソ<b>によって</b>描かれた</span>。<br>
+    即 <b>が → によって</b>，<b>を → が</b>。是换位，不是相加，所以不能说 <span class="jp">ピカソがによって</span>。
+  </div>
+
+  <table>
+    <tr><th style="width:26%">形态</th><th style="width:36%">接什么</th><th>例句</th></tr>
+    <tr><td>によって</td><td>后接<b>动词</b></td><td class="jp">地震によって被害が出た</td></tr>
+    <tr><td>による</td><td>后接<b>名词</b></td><td class="jp">地震による被害</td></tr>
+    <tr><td>により</td><td>书面语，同 によって</td><td class="jp">地震により被害が出た</td></tr>
+  </table>
+  <div class="pit">
+    <b>受害被动不能换 によって：</b><span class="yes">✓</span> <span class="jp">雨に降られた</span>　<span class="no">✗</span> <span class="jp">雨によって降られた</span>
+  </div>
+</section>
+
+<!-- ============ 六 ============ -->
+<section>
+  <h2><span class="num">06</span>最容易混的五组</h2>
+  <table>
+    <tr><th style="width:34%">对比</th><th>一句话区分</th></tr>
+    <tr><td><b>ことにする vs ことになる</b></td><td>自己拍板 vs 结果定下来</td></tr>
+    <tr><td><b>てくる vs ていく</b></td><td>朝我来（做完回来）vs 离我去（做完离开）</td></tr>
+    <tr><td><b>あげる／くれる／もらう</b></td><td>主语是给的人（前两个）还是收的人（もらう）</td></tr>
+    <tr><td><b>について vs のこと</b></td><td>について＝复合助词，<b>后面不再加助词</b>；のこと＝名词，<b>必须带 を／が／は</b></td></tr>
+    <tr><td><b>で vs に（な形容词）</b></td><td>接形容词用 <b>で</b>（静かでいい）；接动词用 <b>に</b>（静かに話す）</td></tr>
+  </table>
+</section>
+
+<!-- ============ 七 ============ -->
+<section>
+  <h2><span class="num">07</span>自测 10 题</h2>
+  <p class="muted">先自己做，想不起来再点开答案。全部做完一遍再对，别逐题对。</p>
+
+  <details><summary>1. 友達が本を＿＿＿。（我收到书）</summary>
+    <div class="ans"><b>くれた</b>　主语是朋友（给的人），受益者是我 → くれる。</div></details>
+
+  <details><summary>2. 私は田中さん＿＿＿教えてもらった。</summary>
+    <div class="ans"><b>に</b>　もらう 句型里，施予者用 に（或 から）。</div></details>
+
+  <details><summary>3. 今、駅に着いた＿＿＿です。（刚刚到）</summary>
+    <div class="ans"><b>ところ</b>　た形＋ところだ＝刚刚。用 ばかり 也可以，但语气更松。</div></details>
+
+  <details><summary>4. 来月、引っ越す＿＿＿になりました。</summary>
+    <div class="ans"><b>こと</b>　动词接 になる 必须先加形式名词 こと。</div></details>
+
+  <details><summary>5. 静か＿＿＿いい部屋ですね。</summary>
+    <div class="ans"><b>で</b>　な形容词并列、接形容词时用 で。✗ 静かにいい。</div></details>
+
+  <details><summary>6. 静か＿＿＿話してください。</summary>
+    <div class="ans"><b>に</b>　接动词用 に（副词形）。</div></details>
+
+  <details><summary>7. 最近、寒＿＿＿なりました。</summary>
+    <div class="ans"><b>く</b>　い形容词接 なる／する 要把 い 变 く。</div></details>
+
+  <details><summary>8. 外を見たら、雨が降って＿＿＿。（开始下雨）</summary>
+    <div class="ans"><b>きた</b>　てくる 表"出现／开始"。</div></details>
+
+  <details><summary>9. 一週間＿＿＿いられません。</summary>
+    <div class="ans"><b>しか</b>　しか 必须配否定，意为"只能待一周"。</div></details>
+
+  <details><summary>10. 町の歴史＿＿＿調べています。</summary>
+    <div class="ans"><b>について</b>　复合助词，自带"关于"，后面不再加 が／を。<br>若用 のこと 则必须是 <span class="jp">歴史のことを調べています</span>。</div></details>
+</section>
+
+<footer>
+  复习建议：今天做一遍 → 三天后再做一遍自测 → 一周后只看"最容易混的五组"和自测错题。<br>
+  排序题不必背语感，按"谁能接谁"推：い形容词直接接 / な形容词加な / 名词加の / 动词直接接。
+</footer>
+
+</div>
+</body>
+</html>

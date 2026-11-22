@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+._*
+.AppleDouble
+
+# Python
+__pycache__/
+*.pyc
+
+# 本地密钥，绝不入库
+.token
+token.txt
+*.pem
