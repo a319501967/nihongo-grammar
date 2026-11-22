@@ -179,7 +179,16 @@ def render(items) -> str:
 def main():
     items = collect()
     out = ROOT / "index.html"
-    out.write_text(render(items), encoding="utf-8")
+    new = render(items)
+
+    # 内容没变就不重写（时间戳那行不算变化），避免 git 里留下无意义的空提交
+    if out.exists():
+        strip = lambda s: re.sub(r"索引生成于 [0-9:\- ]+", "", s)
+        if strip(out.read_text(encoding="utf-8")) == strip(new):
+            print(f"index.html 无变化（收录 {len(items)} 份）")
+            return 0
+
+    out.write_text(new, encoding="utf-8")
     print(f"已生成 {out}")
     print(f"收录 {len(items)} 份：" + ("、".join(i["date"] for i in items) if items else "无"))
 
