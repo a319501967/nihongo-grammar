@@ -149,6 +149,22 @@ def render(items) -> str:
   .empty{{padding:34px;text-align:center;color:var(--ink-3);background:var(--card);border:1px dashed var(--line);border-radius:6px;}}
   code{{background:#f0ede6;padding:1px 5px;border-radius:3px;font-family:"SF Mono",Menlo,monospace;font-size:13px;}}
   footer{{margin-top:38px;padding-top:16px;border-top:1px solid var(--line);color:var(--ink-3);font-size:12.5px;}}
+  @media (max-width:640px){{
+    body{{padding:26px 14px 56px;}}
+    h1{{font-size:22px;letter-spacing:0;}}
+    .sub{{font-size:12px;word-break:break-word;}}
+    .summary{{padding:10px 12px;font-size:13px;gap:8px;}}
+    .summary b{{font-size:15px;}}
+    .jump{{margin-left:0;font-size:12.5px;}}
+    .row{{padding:12px 13px;gap:11px;}}
+    .date{{flex:0 0 auto;padding-right:9px;}}
+    .date .d{{font-size:12.5px;white-space:nowrap;}}
+    .date .w{{font-size:11.5px;}}
+    .name{{font-size:14.5px;}}
+    .topic{{font-size:12.5px;}}
+    .meta{{font-size:12px;}}
+  }}
+
   @media print{{body{{background:#fff;padding:0;}}.row{{break-inside:avoid;}}.jump{{display:none;}}}}
 </style>
 </head>
