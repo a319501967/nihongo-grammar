@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日语语法复习 · 2026-11-23</title>
+<style>
+  :root{
+    --ink:#23201c;
+    --ink-2:#5b544c;
+    --ink-3:#8a8177;
+    --line:#ddd7cd;
+    --line-2:#ece7de;
+    --bg:#f7f5f1;
+    --card:#fffdfa;
+    --accent:#2f6b63;
+    --accent-soft:#e8f0ee;
+    --warn:#a8452f;
+    --warn-soft:#fbeee9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:40px 20px 80px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    font-size:15px;
+    line-height:1.78;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+
+  header.title{
+    padding-bottom:22px;
+    margin-bottom:34px;
+    border-bottom:2px solid var(--ink);
+  }
+  header.title h1{
+    margin:0 0 8px;
+    font-size:27px;
+    letter-spacing:0.5px;
+    font-weight:700;
+  }
+  header.title .sub{
+    color:var(--ink-3);
+    font-size:13.5px;
+    letter-spacing:0.3px;
+  }
+
+  section{margin-bottom:38px;}
+  h2{
+    font-size:19px;
+    margin:0 0 14px;
+    padding-left:12px;
+    border-left:4px solid var(--accent);
+    line-height:1.4;
+    font-weight:700;
+  }
+  h2 .num{
+    color:var(--accent);
+    font-size:13px;
+    font-weight:600;
+    margin-right:8px;
+    letter-spacing:1px;
+  }
+  h3{
+    font-size:15.5px;
+    margin:22px 0 8px;
+    font-weight:700;
+  }
+  p{margin:0 0 10px;}
+  .muted{color:var(--ink-2);}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 22px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0 16px;
+    font-size:14px;
+    background:var(--card);
+  }
+  th,td{
+    border:1px solid var(--line);
+    padding:8px 11px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:#f2efe9;
+    font-weight:700;
+    font-size:13.5px;
+  }
+  td.jp,th.jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+
+  .jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+  code{
+    background:#f0ede6;
+    padding:1px 5px;
+    border-radius:3px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+  }
+  .key{
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14.5px;
+  }
+  .key b{color:var(--accent);}
+  .pit{
+    background:var(--warn-soft);
+    border-left:3px solid var(--warn);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14px;
+  }
+  .pit b{color:var(--warn);}
+
+  .no{color:var(--warn);}
+  .yes{color:var(--accent);font-weight:600;}
+
+  ul.tight{margin:8px 0 12px;padding-left:22px;}
+  ul.tight li{margin-bottom:5px;}
+
+  .flow{
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+    background:#f0ede6;
+    padding:12px 15px;
+    border-radius:4px;
+    white-space:pre;
+    overflow-x:auto;
+    line-height:1.7;
+    margin:12px 0;
+  }
+
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:12px 16px;
+    margin-bottom:9px;
+  }
+  details summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:14.5px;
+    list-style:none;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::before{
+    content:"▸ ";
+    color:var(--accent);
+  }
+  details[open] summary::before{content:"▾ ";}
+  details .ans{
+    margin-top:9px;
+    padding-top:9px;
+    border-top:1px dashed var(--line);
+    font-size:14px;
+    color:var(--ink-2);
+  }
+  details .ans b{color:var(--accent);}
+
+  footer{
+    margin-top:44px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    color:var(--ink-3);
+    font-size:13px;
+  }
+
+  .back{
+    display:inline-block;margin-bottom:16px;
+    font-size:13px;color:var(--ink-3);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:1px;
+    transition:color .15s,border-color .15s;
+  }
+  .back:hover{color:var(--accent);border-color:var(--accent);}
+
+  /* 手机：表格四列会挤成一团，缩内边距 + 允许横向滑动 */
+  @media (max-width:640px){
+    body{padding:26px 14px 56px;font-size:14.5px;}
+    h1{font-size:20px;}
+    .wrap{max-width:100%;}
+    th,td{padding:6px 8px;font-size:13px;line-height:1.6;}
+    table{font-size:13px;}
+    .back{margin-bottom:12px;}
+  }
+
+  @media print{
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .card,details{break-inside:avoid;}
+    table{break-inside:avoid;}
+    details{border:none;padding:0;}
+    details .ans{display:block;}
+    .back{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="index.html">← 返回目录</a>
+
+<header class="title">
+  <h1>日语语法复习 · のに / そうだ / 材料助词 / 副词 / 排序</h1>
+  <div class="sub">2026-11-23 当天所问 5 项 · 已按主题重组，非时间顺序</div>
+</header>
+
+<!-- ============ 一 ============ -->
+<section>
+  <h2><span class="num">01</span>のに（逆接）vs ので（原因）</h2>
+
+  <p class="muted">べんとうを作った<b>のに</b>、家に忘れました。<br>
+  → 明明做好了便当，却忘在家里了。</p>
+
+  <table>
+    <tr><th style="width:20%"></th><th style="width:40%">ので</th><th>のに</th></tr>
+    <tr><td><b>逻辑</b></td><td>顺接：因为…所以…</td><td><b>逆接</b>：明明…却…</td></tr>
+    <tr><td><b>情绪</b></td><td>中性、客观说明</td><td>遗憾、不满、意外</td></tr>
+    <tr><td><b>接续</b></td><td>普通形 ＋ ので</td><td>普通形 ＋ のに<br>（名词／な形容词 ＋ <b>な</b>）</td></tr>
+    <tr><td><b>例子</b></td><td class="jp">寒いので、窓を閉めます</td><td class="jp">寒いのに、窓が開いています</td></tr>
+  </table>
+
+  <div class="key">
+    <b>判断只问一句：</b>前后是「因果」还是「期待落空」？<br>
+    做了便当 → 本应带走 → 结果忘了 → 期待落空，所以用 <b>のに</b>。
+  </div>
+
+  <div class="pit">
+    <b>接续的坑：</b>名词、な形容词后面必须加 <b>な</b>。<br>
+    <span class="yes">✓</span> <span class="jp">学生<b>な</b>のに</span>　<span class="yes">✓</span> <span class="jp">静か<b>な</b>のに</span>　
+    <span class="no">✗</span> <span class="jp">学生のに</span>
+  </div>
+
+  <h3>のに 的两种收尾</h3>
+  <ul class="tight">
+    <li><b>接后半句</b>：<span class="jp">一生懸命勉強した<b>のに</b>、落ちました。</span>（明明很努力，却落榜了）</li>
+    <li><b>句尾单用</b>（说一半，留遗憾）：<span class="jp">せっかく作った<b>のに</b>……</span></li>
+  </ul>
+  <p class="muted"><b>常搭配 </b><span class="jp">せっかく</span>：<span class="jp">せっかく作ったのに、家に忘れました。</span>——“好不容易做的”与“却”天然合拍。</p>
+
+  <div class="pit">
+    <b>别混另一个「のに」＝用途</b>（是 <code>の</code>＋<code>に</code>，不是转折连词）：<br>
+    <span class="jp">このはさみは紙を切る<b>のに</b>使います。</span>（这把剪刀用来剪纸）<br>
+    分辨：后面接<b>动词</b>、句子没有“却”的语气 → 用途；前后是期待落空 → 转折。
+  </div>
+</section>
+
+<!-- ============ 二 ============ -->
+<section>
+  <h2><span class="num">02</span>そうだ：伝聞（听说）vs 様態（看起来）</h2>
+
+  <p class="muted">ともだちは毎日野菜ジュースを作って<b>飲んでいるそうです</b>。<br>
+  → 听说朋友每天都做蔬菜汁喝。</p>
+
+  <table>
+    <tr><th style="width:18%">类型</th><th style="width:34%">接续</th><th>意思</th></tr>
+    <tr><td><b>伝聞</b></td><td>普通形 ＋ そうだ</td><td>听说、据说（转述别人的话）</td></tr>
+    <tr><td><b>様態</b></td><td>ます形去ます／形容词<b>词干</b> ＋ そうだ</td><td>看起来好像……</td></tr>
+  </table>
+
+  <div class="key">
+    <b>一个字的区别，全靠い形容词分辨：</b><br>
+    <span class="jp">おいし<b>そう</b>だ</span> ＝ 看起来好吃（様態，<b>い 被去掉了</b>）<br>
+    <span class="jp">おいし<b>い</b>そうだ</span> ＝ 听说好吃（伝聞，<b>い 还在</b>）
+  </div>
+
+  <h3>伝聞 そうだ 的接续</h3>
+  <table>
+    <tr><th style="width:26%">前接</th><th>示例</th></tr>
+    <tr><td>动词</td><td class="jp">飲むそうだ／飲んでいるそうだ／飲んだそうだ</td></tr>
+    <tr><td>い形容词</td><td class="jp">おいしいそうだ</td></tr>
+    <tr><td>な形容词</td><td class="jp">元気<b>だ</b>そうだ ← だ 要留</td></tr>
+    <tr><td>名词</td><td class="jp">学生<b>だ</b>そうだ ← だ 要留</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>硬规则：不能用于自己的事。</b><br>
+    <span class="no">✗</span> <span class="jp">私は来月日本へ行くそうです。</span>（听起来像在转述别人的话）<br>
+    <span class="yes">✓</span> <span class="jp">私は来月日本へ行くつもりです。</span>
+  </div>
+
+  <h3>四个“好像”的分层</h3>
+  <table>
+    <tr><th style="width:22%">句型</th><th style="width:34%">信息来源</th><th>语感</th></tr>
+    <tr><td><b>そうだ</b></td><td>别人说的</td><td>纯转述，“听说”</td></tr>
+    <tr><td><b>らしい</b></td><td>听到 ＋ 客观迹象</td><td>听说，且有点依据</td></tr>
+    <tr><td><b>ようだ</b></td><td>自己观察</td><td>推断，“好像”</td></tr>
+    <tr><td><b>みたいだ</b></td><td>自己观察（口语）</td><td>同上，更随意</td></tr>
+  </table>
+  <p class="muted">常搭配 <span class="jp">〜によると</span>：<span class="jp">天気予報によると、明日は雪が降るそうです。</span></p>
+</section>
+
+<!-- ============ 三 ============ -->
+<section>
+  <h2><span class="num">03</span>材料：から vs で</h2>
+
+  <p class="muted">バターはぎゅうにゅう<b>から</b>作られます。<br>→ 黄油是用牛奶制成的。</p>
+
+  <table>
+    <tr><th style="width:16%"></th><th style="width:42%">から</th><th>で</th></tr>
+    <tr><td><b>变化</b></td><td>化学变化，成品里<b>认不出</b>原形</td><td>物理加工，成品里<b>认得出</b>原形</td></tr>
+    <tr><td><b>例</b></td><td class="jp">牛乳→バター、ぶどう→ワイン<br>米→酒、大豆→醤油、木→紙、石油→プラスチック</td><td class="jp">木→机、紙→箱<br>鉄→車、ぶどう→ジャム</td></tr>
+  </table>
+
+  <div class="key">
+    <b>不要背例子，从本义推：</b><br>
+    <span class="jp">から</span> 的本义是<b>起点、来源</b>（学校から、3時から）→ 材料是“变过来的来源”。<br>
+    <span class="jp">で</span> 的本义是<b>手段、工具</b>（ペンで書く、バスで行く）→ 材料是“拿来用的东西”。<br>
+    中文对应：<b>「由…制成」→ から；「用…做成」→ で。</b>
+  </div>
+
+  <h3>最经典的一对</h3>
+  <table>
+    <tr><th style="width:50%">から（变成别的了）</th><th>で（还是那个东西）</th></tr>
+    <tr><td class="jp">ぶどう<b>から</b>ワインを作る</td><td class="jp">ぶどう<b>で</b>ジャムを作る</td></tr>
+    <tr><td class="jp">米<b>から</b>酒を作る</td><td class="jp">米<b>で</b>ご飯を炊く</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>其余三个都不表材料：</b><br>
+    <span class="jp">が</span>＝主语　<span class="jp">に</span>＝时点／对象（3時に、先生に）　<span class="jp">まで</span>＝终点（駅まで）
+  </div>
+</section>
+
+<!-- ============ 四 ============ -->
+<section>
+  <h2><span class="num">04</span>副词必须和句尾配对</h2>
+
+  <p class="muted">いっしょうけんめい勉強して、<b>いつか</b>外国の大学に行きたいです。<br>
+  → 我拼命学习，希望总有一天能去国外的大学。</p>
+
+  <table>
+    <tr><th style="width:18%">副词</th><th style="width:26%">意思</th><th style="width:30%">绑定的句尾</th><th>例句</th></tr>
+    <tr><td><b>いつか</b></td><td>将来某时、总有一天</td><td>未来愿望／打算<br><b>～たい／～つもり／～だろう</b></td><td class="jp">いつか日本に行きたい</td></tr>
+    <tr><td><b>すっかり</b></td><td>完全、全部</td><td>变化的完成<br><b>～た／～になる</b></td><td class="jp">すっかり忘れました</td></tr>
+    <tr><td><b>たぶん</b></td><td>大概</td><td>推测<br><b>～だろう／～でしょう／～かもしれない</b></td><td class="jp">たぶん来るでしょう</td></tr>
+    <tr><td><b>やっと</b></td><td>终于（久等／费力）</td><td>已实现<br><b>～た</b></td><td class="jp">やっと終わりました</td></tr>
+  </table>
+
+  <div class="key">
+    <b>做题顺序反过来：先看句尾，再选副词。</b><br>
+    句尾是 <span class="jp">～たい</span>（指向未来、尚未实现）→ 只能 <b>いつか</b>。
+  </div>
+
+  <h3>为什么另外三个不行</h3>
+  <ul class="tight">
+    <li><b>すっかり</b>：管“变化做到什么程度”，必须有已完成的变化托着（すっかり忘れた）。愿望没有“完成度”。</li>
+    <li><b>たぶん</b>：对<b>外部事物</b>做推测。而 <span class="jp">～たい</span> 是自己的愿望——自己的愿望不需要说“大概”，<span class="jp">たぶん～たい</span> 自相矛盾。</li>
+    <li><b>やっと</b>：预设事情<b>已经发生</b>或马上兑现。“想去”没有“终于”可言。</li>
+  </ul>
+
+  <div class="pit">
+    <b>いつか 自带“不确定”，和明确的时间点放一起会打架：</b><br>
+    <span class="no">✗</span> <span class="jp">来年いつか日本に行きたい</span>　
+    <span class="yes">✓</span> <span class="jp">来年<b>の</b>いつか日本に行きたい</span>（要留时间点就加 の）<br>
+    常与 <span class="jp">必ず</span>、<span class="jp">また</span> 呼应：<span class="jp">いつか必ず行きます</span>／<span class="jp">いつかまた会いましょう</span>。
+  </div>
+</section>
+
+<!-- ============ 五 ============ -->
+<section>
+  <h2><span class="num">05</span>排序题：し ＋ だから ＋ 様態そう</h2>
+
+  <p class="muted">今日は、風が <b>強い し 寒そう だから</b> 出かけたくない。<br>
+  → 今天风大，看起来又冷，所以不想出门。</p>
+
+  <div class="flow">風が 〔強い〕① 〔し〕② 〔寒そう〕③★ 〔だから〕④ 出かけたくない</div>
+
+  <h3>四步锁定</h3>
+  <table>
+    <tr><th style="width:14%">位置</th><th style="width:22%">哪个词</th><th>理由</th></tr>
+    <tr><td>第 4 格</td><td><b>だから</b></td><td>必须紧贴结论 <span class="jp">出かけたくない</span>，它是“因为”，后面直接接结果</td></tr>
+    <tr><td>第 2 格</td><td><b>し</b></td><td>前面必须是完整小句（強い），后面还要接下一个理由</td></tr>
+    <tr><td>第 1 格</td><td><b>強い</b></td><td>和 <span class="jp">風が</span> 组成 <span class="jp">風が強い</span>；它不能与寒そう互换（寒そう不修饰強い）</td></tr>
+    <tr><td>第 3 格 ★</td><td><b>寒そう</b></td><td>排剩下的位置</td></tr>
+  </table>
+
+  <div class="key">
+    <b>先锁 `だから`，剩下的位置就自动归位了。</b>它是“因为”，后面必须跟结论，位置是死的。
+  </div>
+
+  <h3>两个容易忽略的细节</h3>
+  <ul class="tight">
+    <li><b>し</b> 贴在<b>小句结尾</b>，前面不能只剩助词（<span class="no">✗</span> <span class="jp">風がし</span>）。它还有个隐含语气：<b>“原因不止这些”</b>——听起来像“……反正就是不想去”。</li>
+    <li><b>だから</b> 这里是 <b>だ ＋ から</b>（因为），不是句首那个接续词“所以”。因为 <span class="jp">寒そう</span> 是な形容词性（<span class="jp">寒そう<b>な</b>日</span>），接 から 必须留 だ：<span class="jp">寒そう<b>だから</b></span>。</li>
+  </ul>
+
+  <h3>様態そう 的变形</h3>
+  <table>
+    <tr><th style="width:24%">词类</th><th style="width:30%">变形</th><th>例</th></tr>
+    <tr><td>い形容词</td><td>去 <b>い</b> ＋ そう</td><td class="jp">寒い → 寒そう</td></tr>
+    <tr><td>な形容词</td><td>词干 ＋ そう</td><td class="jp">元気 → 元気そう</td></tr>
+    <tr><td>动词</td><td>ます形去ます ＋ そう</td><td class="jp">降る → 降りそう</td></tr>
+  </table>
+</section>
+
+<!-- ============ 六 ============ -->
+<section>
+  <h2><span class="num">06</span>错因归纳：四个“看着都认识”的坑</h2>
+
+  <p class="muted">这一天的失分，没有一道是因为“不认识这个词”。全是两个都认识的选项之间选错——按错因类型记，比记答案有用。</p>
+
+  <table>
+    <tr><th style="width:30%">错因类型</th><th style="width:34%">当时是怎么想岔的</th><th>下次怎么防</th></tr>
+    <tr><td><b>① 顺接／逆接搞反</b></td><td>把“做了便当”当成“忘记”的原因，填了表“因为”的 ので</td><td>先判断“期待有没有落空”，再选</td></tr>
+    <tr><td><b>② 只差一个假名的两种句型</b></td><td>そうだ 有伝聞／様態两种，光看“好像”分不出来</td><td>看い形容词的 <b>い</b> 在不在：在＝听说，没了＝看起来</td></tr>
+    <tr><td><b>③ 助词没接回本义</b></td><td>材料助词被当成主语标记（填了 が）</td><td>から＝起点、で＝手段，从本义推，不背例子</td></tr>
+    <tr><td><b>④ 副词只看中文意思</b></td><td>只盯着“总有一天”，没看句尾是 ～たい</td><td>先看句尾（たい／でしょう／た），再选副词</td></tr>
+  </table>
+
+  <div class="key">
+    <b>四类的共同点：</b>都不是“不会”，而是缺一条<b>“先看什么”</b>的固定顺序。<br>
+    补词义没用，要补的是每类题的判断入口——逆接看期待、そうだ看 い、材料看本义、副词看句尾。
+  </div>
+</section>
+
+<!-- ============ 七 ============ -->
+<section>
+  <h2><span class="num">07</span>自测 10 题</h2>
+  <p class="muted">括号里是中文提示。先做完 10 题再对答案。</p>
+
+  <details><summary>1. べんとうを作った＿＿＿、家に忘れました。</summary>
+    <div class="ans"><b>のに</b>　努力付出＋结果相反 → 逆接。用 ので 会变成“因为做了便当，所以忘在家里”，因果不成立。</div></details>
+
+  <details><summary>2. 熱がある＿＿＿、学校を休みます。</summary>
+    <div class="ans"><b>ので</b>　发热 → 请假，是正常的因果关系，用不着“却”。</div></details>
+
+  <details><summary>3. バターは牛乳＿＿＿作られます。</summary>
+    <div class="ans"><b>から</b>　牛奶变成黄油，成品里认不出牛奶 → 来源（起点）。</div></details>
+
+  <details><summary>4. この机は木＿＿＿作られています。</summary>
+    <div class="ans"><b>で</b>　桌子还是木头，只看得出加工痕迹 → 手段（用）。</div></details>
+
+  <details><summary>5. 友だちは毎日野菜ジュースを作って飲んでいる＿＿＿。</summary>
+    <div class="ans"><b>そうです</b>　转述朋友的习惯 → 伝聞（听说）。</div></details>
+
+  <details><summary>6. このケーキは＿＿＿。（看起来很好吃）</summary>
+    <div class="ans"><b>おいしそうだ</b>　様態：い形容词去 <b>い</b> ＋ そう。</div></details>
+
+  <details><summary>7. このケーキは＿＿＿。（听说很好吃）</summary>
+    <div class="ans"><b>おいしいそうです</b>　伝聞：普通形 ＋ そうだ，<b>い 保留</b>。<br>6 与 7 只差一个 い，正是最常考的那一对。</div></details>
+
+  <details><summary>8. ＿＿＿外国の大学に行きたいです。</summary>
+    <div class="ans"><b>いつか</b>　句尾是 ～たい（未来愿望）→ 只能配 いつか。</div></details>
+
+  <details><summary>9. 三時間かかって、＿＿＿終わりました。</summary>
+    <div class="ans"><b>やっと</b>　久等／费力之后实现，且已发生（～ました）。</div></details>
+
+  <details><summary>10. 今日は風が強い＿＿、寒そう＿＿から、出かけたくない。</summary>
+    <div class="ans"><b>し</b> ／ <b>だ</b>　し 接在小句结尾（強いし）；寒そう 是な形容词性，接 から 要留 だ（寒そうだから）。</div></details>
+</section>
+
+<footer>
+  复习建议：今天做一遍 → 三天后再做一遍自测 → 一周后只看第 06 节的四类错因。<br>
+  这一天错的地方，全是“两个都认识却选错”，所以重点不是再背一遍词义，是把判断入口固定下来。
+</footer>
+
+</div>
+</body>
+</html>
