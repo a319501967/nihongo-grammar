@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日语语法复习 · 2026-11-24</title>
+<style>
+  :root{
+    --ink:#23201c;
+    --ink-2:#5b544c;
+    --ink-3:#8a8177;
+    --line:#ddd7cd;
+    --line-2:#ece7de;
+    --bg:#f7f5f1;
+    --card:#fffdfa;
+    --accent:#2f6b63;
+    --accent-soft:#e8f0ee;
+    --warn:#a8452f;
+    --warn-soft:#fbeee9;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:40px 20px 80px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    font-size:15px;
+    line-height:1.78;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+
+  header.title{
+    padding-bottom:22px;
+    margin-bottom:34px;
+    border-bottom:2px solid var(--ink);
+  }
+  header.title h1{
+    margin:0 0 8px;
+    font-size:27px;
+    letter-spacing:0.5px;
+    font-weight:700;
+  }
+  header.title .sub{
+    color:var(--ink-3);
+    font-size:13.5px;
+    letter-spacing:0.3px;
+  }
+
+  section{margin-bottom:38px;}
+  h2{
+    font-size:19px;
+    margin:0 0 14px;
+    padding-left:12px;
+    border-left:4px solid var(--accent);
+    line-height:1.4;
+    font-weight:700;
+  }
+  h2 .num{
+    color:var(--accent);
+    font-size:13px;
+    font-weight:600;
+    margin-right:8px;
+    letter-spacing:1px;
+  }
+  h3{
+    font-size:15.5px;
+    margin:22px 0 8px;
+    font-weight:700;
+  }
+  p{margin:0 0 10px;}
+  .muted{color:var(--ink-2);}
+
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:20px 22px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0 16px;
+    font-size:14px;
+    background:var(--card);
+  }
+  th,td{
+    border:1px solid var(--line);
+    padding:8px 11px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:#f2efe9;
+    font-weight:700;
+    font-size:13.5px;
+  }
+  td.jp,th.jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+
+  .jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+  code{
+    background:#f0ede6;
+    padding:1px 5px;
+    border-radius:3px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+  }
+  .key{
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14.5px;
+  }
+  .key b{color:var(--accent);}
+  .pit{
+    background:var(--warn-soft);
+    border-left:3px solid var(--warn);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14px;
+  }
+  .pit b{color:var(--warn);}
+
+  .no{color:var(--warn);}
+  .yes{color:var(--accent);font-weight:600;}
+
+  ul.tight{margin:8px 0 12px;padding-left:22px;}
+  ul.tight li{margin-bottom:5px;}
+
+  .flow{
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+    background:#f0ede6;
+    padding:12px 15px;
+    border-radius:4px;
+    white-space:pre;
+    overflow-x:auto;
+    line-height:1.7;
+    margin:12px 0;
+  }
+
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:12px 16px;
+    margin-bottom:9px;
+  }
+  details summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:14.5px;
+    list-style:none;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::before{
+    content:"▸ ";
+    color:var(--accent);
+  }
+  details[open] summary::before{content:"▾ ";}
+  details .ans{
+    margin-top:9px;
+    padding-top:9px;
+    border-top:1px dashed var(--line);
+    font-size:14px;
+    color:var(--ink-2);
+  }
+  details .ans b{color:var(--accent);}
+
+  footer{
+    margin-top:44px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    color:var(--ink-3);
+    font-size:13px;
+  }
+
+  .back{
+    display:inline-block;margin-bottom:16px;
+    font-size:13px;color:var(--ink-3);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:1px;
+    transition:color .15s,border-color .15s;
+  }
+  .back:hover{color:var(--accent);border-color:var(--accent);}
+
+  /* 手机：表格四列会挤成一团，缩内边距 + 允许横向滑动 */
+  @media (max-width:640px){
+    body{padding:26px 14px 56px;font-size:14.5px;}
+    h1{font-size:20px;}
+    .wrap{max-width:100%;}
+    th,td{padding:6px 8px;font-size:13px;line-height:1.6;}
+    table{font-size:13px;}
+    .back{margin-bottom:12px;}
+  }
+
+  @media print{
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    .card,details{break-inside:avoid;}
+    table{break-inside:avoid;}
+    details{border:none;padding:0;}
+    details .ans{display:block;}
+    .back{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="index.html">← 返回目录</a>
+
+<header class="title">
+  <h1>日语语法复习 · あとで / ても / も / ようになる / すぎる</h1>
+  <div class="sub">2026-11-24 当天所问 8 项 · 已按主题重组，非时间顺序</div>
+</header>
+
+<!-- ============ 一 ============ -->
+<section>
+  <h2><span class="num">01</span>时间还是原因：あとで vs ので</h2>
+
+  <p class="muted">授業が おわった<b>あとで</b>、友だちと カフェへ 行きました。<br>
+  → 下课之后，和朋友去了咖啡厅。</p>
+
+  <table>
+    <tr><th style="width:20%">选项</th><th>判断</th></tr>
+    <tr><td class="jp">まえに</td><td><span class="no">✗</span> 词形和意思都反了（见下）</td></tr>
+    <tr><td class="jp">から</td><td><span class="no">✗</span> 表“因为”，属原因</td></tr>
+    <tr><td class="jp"><b>あとで</b></td><td><span class="yes">✓</span> 时间先后</td></tr>
+    <tr><td class="jp">ので</td><td><span class="no">✗</span> 结构没错，但意思变成“因为下课了”</td></tr>
+  </table>
+
+  <div class="key">
+    <b>单选题的排除技巧：</b><span class="jp">から</span> 和 <span class="jp">ので</span> 都表“因为”——若答案是因果，就会有两个正确项，所以两个同义选项必然都错，只剩时间线。
+  </div>
+
+  <h3>接续对照</h3>
+  <table>
+    <tr><th style="width:30%">句型</th><th style="width:28%">接续</th><th>例</th></tr>
+    <tr><td>～た<b>あとで</b>（之后）</td><td>动词<b>た形</b></td><td class="jp">終わっ<b>た</b>あとで</td></tr>
+    <tr><td>～<b>まえに</b>（之前）</td><td>动词<b>辞书形</b></td><td class="jp">終わ<b>る</b>まえに</td></tr>
+    <tr><td>名词 ＋ の ＋ あとで</td><td>名词＋の</td><td class="jp">授業<b>の</b>あとで</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>方向相反，词形也相反：</b><br>
+    <span class="no">✗</span> <span class="jp">終わるあとで</span>　<span class="no">✗</span> <span class="jp">終わったまえに</span>
+  </div>
+
+  <h3>あとで vs てから</h3>
+  <ul class="tight">
+    <li><b>あとで</b>＝之后（中间可隔一段时间，可换地点）</li>
+    <li><b>てから</b>＝做完这个之后（更强调紧接、以此为起点）</li>
+  </ul>
+</section>
+
+<!-- ============ 二 ============ -->
+<section>
+  <h2><span class="num">02</span>无论 ＋ 很可能：疑问词＋ても ／ ～てもおかしくない</h2>
+
+  <p class="muted">どちらも強いので、どちらが<b>勝ってもおかしくない</b>ですね。<br>
+  → 两边都很强，所以哪边赢都不奇怪。</p>
+
+  <div class="flow">どちらも強いので、　どちらが勝っても　おかしくない　ですね。
+  两边都很强            无论哪边赢        不奇怪</div>
+
+  <h3>要点一：疑问词 ＋ ても ＝ 无论／不管</h3>
+  <table>
+    <tr><th style="width:40%">形式</th><th>意思</th></tr>
+    <tr><td class="jp">どちらが勝っ<b>ても</b></td><td>无论哪边赢</td></tr>
+    <tr><td class="jp">だれが来<b>ても</b></td><td>无论谁来</td></tr>
+    <tr><td class="jp">何を食べ<b>ても</b></td><td>无论吃什么</td></tr>
+    <tr><td class="jp">どこへ行っ<b>ても</b></td><td>无论去哪儿</td></tr>
+  </table>
+
+  <h3>要点二：～てもおかしくない ＝ 也不奇怪 ＝ 很可能</h3>
+  <p class="muted"><span class="jp">おかしい</span>（奇怪）→ 否定 <span class="jp">おかしくない</span>（不奇怪）。这是日语表达“很可能”的间接说法，比 <span class="jp">たぶん</span> 更有推断意味。</p>
+
+  <div class="key">
+    <span class="jp">彼が怒ってもおかしくない。</span><br>
+    他生气也不奇怪 → 也就是说：<b>他生气很正常</b>。
+  </div>
+
+  <h3>三个错项的话题全不对</h3>
+  <table>
+    <tr><th style="width:44%">选项</th><th>属于什么话题</th></tr>
+    <tr><td class="jp">勝たないといけない</td><td>义务（必须赢）</td></tr>
+    <tr><td class="jp">勝たなくてもいい</td><td>许可（不赢也行）</td></tr>
+    <tr><td class="jp">勝ったほうがいい</td><td>建议（最好赢）</td></tr>
+  </table>
+  <p class="muted">题目在<b>推测结果</b>，三个错项分别说义务、许可、建议，都不在这个话题里。</p>
+
+  <h3>どちら 的四种形态</h3>
+  <table>
+    <tr><th style="width:26%">形式</th><th>意思</th></tr>
+    <tr><td class="jp">どちら<b>も</b></td><td>两边都</td></tr>
+    <tr><td class="jp">どちら<b>が</b></td><td>哪一个（疑问）</td></tr>
+    <tr><td class="jp">どちら<b>か</b></td><td>其中一个</td></tr>
+    <tr><td class="jp">どちら<b>でも</b></td><td>哪个都行</td></tr>
+  </table>
+</section>
+
+<!-- ============ 三 ============ -->
+<section>
+  <h2><span class="num">03</span>必须：～ないといけない</h2>
+
+  <div class="flow">勝たない ＋ と（如果）＋ いけない（不行）
+＝ 如果不赢就不行 ＝ 必须赢</div>
+
+  <p class="muted"><b>接续：</b>动词<b>ない形</b> ＋ と ＋ いけない（勝つ → 勝たないといけない）</p>
+
+  <h3>同义六种，只是语体不同</h3>
+  <table>
+    <tr><th style="width:44%">形式</th><th>语体</th></tr>
+    <tr><td class="jp">ないといけない</td><td>标准</td></tr>
+    <tr><td class="jp">なくてはいけない</td><td>略正式</td></tr>
+    <tr><td class="jp">なければならない</td><td>书面、正式</td></tr>
+    <tr><td class="jp">ないと（省略后半）</td><td>口语最常用</td></tr>
+    <tr><td class="jp">なきゃ</td><td>口语缩略</td></tr>
+    <tr><td class="jp">なくちゃ</td><td>口语缩略</td></tr>
+  </table>
+
+  <h3>与“许可组”对照（四条一起记）</h3>
+  <table>
+    <tr><th style="width:44%">句型</th><th>意思</th></tr>
+    <tr><td class="jp">～て<b>も</b>いい</td><td>可以</td></tr>
+    <tr><td class="jp">～て<b>は</b>いけない</td><td>不可以</td></tr>
+    <tr><td class="jp">～<b>なくて</b>もいい</td><td>不必（不做也行）</td></tr>
+    <tr><td class="jp">～<b>ないと</b>いけない</td><td>必须（不做不行）</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>只差 <code>ない</code> 的位置，意思相反：</b><br>
+    <span class="jp">なくてもいい</span>（不必）↔ <span class="jp">ないといけない</span>（必须）
+  </div>
+
+  <p class="muted"><b>关联：</b>10-27 问过的「非常袋を準備して<b>おかないと</b>」就是这个句型省掉了 <span class="jp">いけない</span>。</p>
+</section>
+
+<!-- ============ 四 ============ -->
+<section>
+  <h2><span class="num">04</span>も：除了“也”，还能是“都”</h2>
+
+  <p class="muted"><span class="jp">も</span> 有四种用法，靠<b>句尾肯定／否定</b>区分：</p>
+
+  <table>
+    <tr><th style="width:26%">用法</th><th style="width:30%">形式</th><th>例句</th></tr>
+    <tr><td>① 同类追加＝<b>也</b></td><td>名词＋も＋肯定</td><td class="jp">私<b>も</b>行きます</td></tr>
+    <tr><td>② 全部＝<b>都</b></td><td>疑问词／两者＋も＋<b>肯定</b></td><td class="jp">どちら<b>も</b>強い</td></tr>
+    <tr><td>③ 数量之多＝<b>竟然</b></td><td>数量词＋も</td><td class="jp">３時間<b>も</b>待った</td></tr>
+    <tr><td>④ 完全否定＝<b>一点都不</b></td><td>疑问词／最小量＋も＋<b>否定</b></td><td class="jp">１円<b>も</b>ない</td></tr>
+  </table>
+
+  <h3>最关键的一条：疑问词＋も，肯定＝全都，否定＝全都不</h3>
+  <table>
+    <tr><th style="width:50%">肯定</th><th>否定</th></tr>
+    <tr><td class="jp">だれ<b>も</b>知っている（谁都知道）</td><td class="jp">だれ<b>も</b>知らない（谁都不知道）</td></tr>
+    <tr><td class="jp">どこ<b>も</b>混んでいる（到处都挤）</td><td class="jp">どこ<b>も</b>空いていない（哪儿都没空）</td></tr>
+    <tr><td>—</td><td class="jp">何<b>も</b>ない（什么都没有）</td></tr>
+  </table>
+
+  <h3>助词规则：も 只吞掉 が／を</h3>
+  <table>
+    <tr><th style="width:44%">原句</th><th>加 も 后</th></tr>
+    <tr><td class="jp">どちら<b>が</b>強い</td><td class="jp">どちら<b>も</b>強い</td></tr>
+    <tr><td class="jp">パン<b>を</b>買う</td><td class="jp">パン<b>も</b>買う</td></tr>
+    <tr><td class="jp">東京<b>に</b>行く</td><td class="jp">東京<b>に</b>も行く（に 保留）</td></tr>
+    <tr><td class="jp">学校<b>で</b>勉強する</td><td class="jp">学校<b>で</b>も勉強する（で 保留）</td></tr>
+  </table>
+
+  <div class="key">
+    本句里两个都出现了：<span class="jp">どちら<b>も</b>強い</span>（都强）＋ <span class="jp">どちら<b>が</b>勝っても</span>（无论哪个赢）。<br>
+    同一个词，加 <b>も</b> 就是“都”，加 <b>が</b> 就是“哪一个”。
+  </div>
+</section>
+
+<!-- ============ 五 ============ -->
+<section>
+  <h2><span class="num">05</span>变化：～ようになる</h2>
+
+  <div class="key">
+    <b>字面：</b><span class="jp">よう</span>（样子）＋ <span class="jp">になる</span>（变成）＝ 变成……的样子<br>
+    → <b>变得……了／开始……了</b>
+  </div>
+
+  <h3>接续</h3>
+  <table>
+    <tr><th style="width:32%">形式</th><th style="width:34%">例</th><th>意思</th></tr>
+    <tr><td>动词<b>辞书形</b> ＋ ようになる</td><td class="jp">料理をするようになる</td><td>开始做饭了</td></tr>
+    <tr><td>动词<b>ない形</b> ＋ ようになる</td><td class="jp">お酒を飲まないようになる</td><td>变得不喝酒了</td></tr>
+    <tr><td>动词<b>可能形</b> ＋ ようになる</td><td class="jp">日本語が話せるようになる</td><td>变得会说日语了</td></tr>
+  </table>
+
+  <h3>三类变化</h3>
+  <table>
+    <tr><th style="width:24%">类型</th><th>例句</th></tr>
+    <tr><td>能力</td><td class="jp">泳げる<b>ようになりました</b>（学会游泳了）</td></tr>
+    <tr><td>习惯</td><td class="jp">毎朝走る<b>ようになりました</b>（开始每天跑）</td></tr>
+    <tr><td>否定习惯</td><td class="jp">肉を食べない<b>ようになりました</b>（变得不吃肉了）</td></tr>
+  </table>
+
+  <h3>三兄弟对比（最容易混）</h3>
+  <table>
+    <tr><th style="width:26%">句型</th><th style="width:34%">意思</th><th>谁在起作用</th></tr>
+    <tr><td class="jp">～<b>ように</b>なる</td><td>变得…（自然变化）</td><td>状态自己变</td></tr>
+    <tr><td class="jp">～<b>ように</b>する</td><td>尽量做到…（主观努力）</td><td>自己有意为之</td></tr>
+    <tr><td class="jp">～<b>ことに</b>なる</td><td>决定…（客观结果）</td><td>别人／事态决定</td></tr>
+  </table>
+
+  <p class="muted">用“戒烟”区分：</p>
+  <ul class="tight">
+    <li><span class="jp">たばこを吸わない<b>ようになりました</b>。</span>　→ 变得不抽了（不知不觉）</li>
+    <li><span class="jp">たばこを吸わない<b>ようにしています</b>。</span>　→ 一直尽量不抽（靠意志）</li>
+    <li><span class="jp">たばこを吸わない<b>ことになりました</b>。</span>　→ 被定下来要戒（比如医生要求）</li>
+  </ul>
+
+  <h3>与形容词的分工</h3>
+  <table>
+    <tr><th style="width:24%">词类</th><th style="width:28%">说法</th><th>例</th></tr>
+    <tr><td>い形容词</td><td>く ＋ なる</td><td class="jp">寒<b>く</b>なった</td></tr>
+    <tr><td>な形容词</td><td>に ＋ なる</td><td class="jp">元気<b>に</b>なった</td></tr>
+    <tr><td>名词</td><td>に ＋ なる</td><td class="jp">先生<b>に</b>なった</td></tr>
+    <tr><td><b>动词</b></td><td><b>ように</b> ＋ なる</td><td class="jp">走る<b>ように</b>なった</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>动词不能直接接 なる，必须用 <span class="jp">ように</span> 过渡。</b><br>
+    <span class="no">✗</span> <span class="jp">走るなった</span>　<span class="yes">✓</span> <span class="jp">走る<b>ように</b>なった</span>
+  </div>
+</section>
+
+<!-- ============ 六 ============ -->
+<section>
+  <h2><span class="num">06</span>过度：～すぎる</h2>
+
+  <div class="key">
+    <b>すぎる 接的是“词干”，不是连用形。</b>
+  </div>
+
+  <table>
+    <tr><th style="width:24%">词类</th><th style="width:34%">词干</th><th>＋すぎる</th></tr>
+    <tr><td><b>い形容词</b></td><td>去掉 <b>い</b>：大き</td><td class="jp"><b>大きすぎる</b></td></tr>
+    <tr><td><b>な形容词</b></td><td>本身：静か</td><td class="jp">静かすぎる</td></tr>
+    <tr><td><b>动词</b></td><td>ます形去ます：食べ</td><td class="jp">食べすぎる</td></tr>
+  </table>
+
+  <div class="pit">
+    <span class="no">✗</span> <span class="jp">大きくすぎる</span>（<span class="jp">大きく</span> 是连用形，只修饰动词）<br>
+    <span class="no">✗</span> <span class="jp">大きいすぎる</span>　
+    <span class="yes">✓</span> <span class="jp">大きすぎる</span>
+  </div>
+
+  <p class="muted"><span class="jp">大きく</span> 的职责只有修饰动词：<span class="jp">大きく書く</span>、<span class="jp">大きく育つ</span>、<span class="jp">大きくなる</span>。接 <span class="jp">すぎる</span> 必须先用词干。</p>
+
+  <h3>两条特殊变化</h3>
+  <table>
+    <tr><th style="width:28%">原形</th><th>接すぎる</th></tr>
+    <tr><td class="jp"><b>いい</b></td><td class="jp"><b>よ</b>すぎる</td></tr>
+    <tr><td class="jp"><b>ない</b></td><td class="jp"><b>なさ</b>すぎる（お金がなさすぎる）</td></tr>
+  </table>
+
+  <p class="muted"><span class="jp">すぎる</span> 自身是一段动词：<span class="jp">すぎます／すぎて／すぎた</span>。</p>
+
+  <p>原题：<span class="jp">このすいかは<b>大きすぎて</b>、れいぞうこに入らない。</span>（太大了，放不进冰箱）<br>
+  <span class="muted">这里的 <code>て形</code> 表<b>原因</b>。</span></p>
+</section>
+
+<!-- ============ 七 ============ -->
+<section>
+  <h2><span class="num">07</span>评价基准：～に便利だ</h2>
+
+  <p class="muted">私の家はスーパーが近くて、買い物<b>に</b>便利です。<br>
+  → 我家离超市近，对买东西来说很方便。</p>
+
+  <h3>为什么不是 を</h3>
+  <table>
+    <tr><th style="width:34%">句子</th><th style="width:14%">助词</th><th>原因</th></tr>
+    <tr><td class="jp">買い物<b>を</b>する</td><td>を</td><td><span class="jp">する</span> 是<b>他动词</b>，需要宾语</td></tr>
+    <tr><td class="jp">買い物<b>に</b>便利だ</td><td>に</td><td><span class="jp">便利だ</span> 是<b>な形容词</b>，不接宾语</td></tr>
+  </table>
+  <p class="muted"><span class="jp">に</span> 在这里表示<b>评价的方面／对象</b>：“对……来说”。同一组词，谓语是动词就用 <span class="jp">を</span>，谓语是形容词就用 <span class="jp">に</span>。</p>
+
+  <h3>同一族固定搭配（都带 に）</h3>
+  <table>
+    <tr><th style="width:44%">搭配</th><th>意思</th></tr>
+    <tr><td class="jp">買い物<b>に</b>便利</td><td>购物方便</td></tr>
+    <tr><td class="jp">体<b>に</b>いい／体<b>に</b>悪い</td><td>对身体好／不好</td></tr>
+    <tr><td class="jp">勉強<b>に</b>役に立つ</td><td>对学习有用</td></tr>
+    <tr><td class="jp">初心者<b>に</b>やさしい</td><td>对初学者友好</td></tr>
+    <tr><td class="jp">生活<b>に</b>必要だ</td><td>生活必需</td></tr>
+  </table>
+
+  <h3>に 的六种用法（把这次放进已有框架）</h3>
+  <table>
+    <tr><th style="width:30%">用法</th><th>例</th></tr>
+    <tr><td>时点</td><td class="jp">3時<b>に</b>会う</td></tr>
+    <tr><td>存在场所</td><td class="jp">部屋<b>に</b>ある</td></tr>
+    <tr><td>目的地</td><td class="jp">日本<b>に</b>行く</td></tr>
+    <tr><td>对象</td><td class="jp">先生<b>に</b>聞く</td></tr>
+    <tr><td><b>评价基准</b></td><td class="jp">買い物<b>に</b>便利 ← 本句</td></tr>
+    <tr><td>变化结果</td><td class="jp">先生<b>に</b>なる</td></tr>
+  </table>
+</section>
+
+<!-- ============ 八 ============ -->
+<section>
+  <h2><span class="num">08</span>词汇：どのくらい</h2>
+
+  <ul class="tight">
+    <li>意思：多少／多久／多远，问<b>程度、数量、时间、距离</b>；也写 <span class="jp">どの位</span>，口语 <span class="jp">どれくらい</span>。</li>
+    <li>常与 <span class="jp">かかります</span> 搭配：<span class="jp">駅まで<b>どのくらい</b>かかりますか。</span></li>
+    <li>分工：<span class="jp">いくら</span>＝价钱、<span class="jp">いくつ</span>＝个数/年龄、<span class="jp">どのくらい</span>＝程度/时间/距离（也可问钱）。</li>
+    <li>接名词要加 <span class="jp">の</span>：<span class="jp"><b>どのくらいの</b>時間</span>／<span class="jp"><b>どのくらいの</b>お金</span>。</li>
+  </ul>
+</section>
+
+<!-- ============ 九 ============ -->
+<section>
+  <h2><span class="num">09</span>错因归纳：四个“判断入口”错了</h2>
+
+  <table>
+    <tr><th style="width:26%">错因类型</th><th style="width:38%">当时怎么想岔的</th><th>下次怎么防</th></tr>
+    <tr><td><b>① 时间／原因没分清</b></td><td>“下课之后”被读成“因为下课”，选了 <span class="jp">ので</span></td><td>先定是时间关系还是因果关系；<span class="jp">から</span> 与 <span class="jp">ので</span> 同义，本身可直接排除</td></tr>
+    <tr><td><b>② 只看词，不看句型收尾</b></td><td><span class="jp">てもおかしくない</span> 没见过，就去猜词义</td><td><span class="jp">おかしくない</span>＝“很正常/很可能”，是固定的推测说法</td></tr>
+    <tr><td><b>③ 词性没先判</b></td><td>见到 <span class="jp">買い物</span> 就想到 <span class="jp">を</span>，没看谓语是形容词</td><td>先判谓语：动词→を，形容词→に</td></tr>
+    <tr><td><b>④ 把连用形当成接续形</b></td><td>用 <span class="jp">大きく</span>（连用形）去接 <span class="jp">すぎる</span></td><td>い形容词的词干是<b>去掉い</b>，<span class="jp">く</span> 是连用形</td></tr>
+  </table>
+
+  <div class="key">
+    <b>共同点：</b>这几道都不是“不认识词”，而是<b>判断入口错了</b>——先看错了地方。<br>
+    同义先排除 → 时间线；句型先看收尾 → 推测；助词先判谓语词性 → 形容词不带宾语；接续先找词干 → <span class="jp">い</span> 要剥掉。
+  </div>
+</section>
+
+<!-- ============ 十 ============ -->
+<section>
+  <h2><span class="num">10</span>自测 10 题</h2>
+  <p class="muted">先做完 10 题再对答案。</p>
+
+  <details><summary>1. 授業が終わった＿＿＿、カフェへ行きました。</summary>
+    <div class="ans"><b>あとで</b>　时间先后；填 ので 会变成“因为下课”。</div></details>
+
+  <details><summary>2. 熱がある＿＿＿、学校を休みます。</summary>
+    <div class="ans"><b>ので</b>　正常的因果关系（发热 → 请假）。</div></details>
+
+  <details><summary>3. だれが来＿＿＿、同じ対応をしてください。</summary>
+    <div class="ans"><b>ても</b>　疑问词＋ても＝无论。</div></details>
+
+  <details><summary>4. 大雨で川が溢れ＿＿＿おかしくない。</summary>
+    <div class="ans"><b>ても</b>　～てもおかしくない＝很可能（下这么大雨，河水漫出来也不奇怪）。</div></details>
+
+  <details><summary>5. ８時までに来＿＿＿いけない。</summary>
+    <div class="ans"><b>ないと</b>　ないといけない＝必须。</div></details>
+
+  <details><summary>6. どちら＿＿強いです。</summary>
+    <div class="ans"><b>も</b>　どちらも＝两边都。</div></details>
+
+  <details><summary>7. だれ＿＿知らない。</summary>
+    <div class="ans"><b>も</b>　疑问词＋も＋否定＝谁都不。</div></details>
+
+  <details><summary>8. 日本語が＿＿＿＿なりました。（話せる）</summary>
+    <div class="ans"><b>話せるように</b>　可能形＋ようになる＝能力变化。</div></details>
+
+  <details><summary>9. このすいかは＿＿＿＿すぎて、入りません。（大きい）</summary>
+    <div class="ans"><b>大き</b>　い形容词去 <b>い</b> 接 すぎる。</div></details>
+
+  <details><summary>10. この店は買い物＿＿＿便利です。</summary>
+    <div class="ans"><b>に</b>　评价基准；<span class="jp">便利</span> 是形容词，不能用 <span class="jp">を</span>。</div></details>
+</section>
+
+<footer>
+  复习建议：今天做一遍 → 三天后再做一遍自测 → 一周后只看第 09 节的四类错因。<br>
+  这一天的失分来自“判断入口”，所以重点不是再背一遍词义，而是把四个入口固定下来。
+</footer>
+
+</div>
+</body>
+</html>
