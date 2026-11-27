@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日语语法复习 · 2026-11-26（含 11-25）</title>
+<style>
+  :root{
+    --ink:#23201c;
+    --ink-2:#5b544c;
+    --ink-3:#8a8177;
+    --line:#ddd7cd;
+    --line-2:#ece7de;
+    --bg:#f7f5f1;
+    --card:#fffdfa;
+    --accent:#2f6b63;
+    --accent-soft:#e8f0ee;
+    --warn:#a8452f;
+    --warn-soft:#fbeee9;
+    --day:#6b5b3e;
+    --day-soft:#f1ece1;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    padding:40px 20px 80px;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans","Noto Sans JP",system-ui,sans-serif;
+    font-size:15px;
+    line-height:1.78;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:840px;margin:0 auto;}
+
+  header.title{
+    padding-bottom:22px;
+    margin-bottom:34px;
+    border-bottom:2px solid var(--ink);
+  }
+  header.title h1{
+    margin:0 0 8px;
+    font-size:27px;
+    letter-spacing:0.5px;
+    font-weight:700;
+  }
+  header.title .sub{
+    color:var(--ink-3);
+    font-size:13.5px;
+    letter-spacing:0.3px;
+  }
+
+  section{margin-bottom:38px;}
+  h2{
+    font-size:19px;
+    margin:0 0 14px;
+    padding-left:12px;
+    border-left:4px solid var(--accent);
+    line-height:1.4;
+    font-weight:700;
+  }
+  h2 .num{
+    color:var(--accent);
+    font-size:13px;
+    font-weight:600;
+    margin-right:8px;
+    letter-spacing:1px;
+  }
+  h2 .day{
+    display:inline-block;
+    background:var(--day-soft);
+    color:var(--day);
+    font-size:11.5px;
+    padding:1px 7px;
+    border-radius:3px;
+    margin-right:8px;
+    vertical-align:2px;
+    font-weight:600;
+    letter-spacing:.5px;
+  }
+  h3{
+    font-size:15.5px;
+    margin:22px 0 8px;
+    font-weight:700;
+  }
+  p{margin:0 0 10px;}
+  .muted{color:var(--ink-2);}
+
+  table{
+    width:100%;
+    border-collapse:collapse;
+    margin:12px 0 16px;
+    font-size:14px;
+    background:var(--card);
+  }
+  th,td{
+    border:1px solid var(--line);
+    padding:8px 11px;
+    text-align:left;
+    vertical-align:top;
+  }
+  th{
+    background:#f2efe9;
+    font-weight:700;
+    font-size:13.5px;
+  }
+  td.jp,th.jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+
+  .jp{font-family:"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;}
+  code{
+    background:#f0ede6;
+    padding:1px 5px;
+    border-radius:3px;
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+  }
+  .key{
+    background:var(--accent-soft);
+    border-left:3px solid var(--accent);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14.5px;
+  }
+  .key b{color:var(--accent);}
+  .pit{
+    background:var(--warn-soft);
+    border-left:3px solid var(--warn);
+    padding:9px 14px;
+    margin:12px 0;
+    border-radius:0 4px 4px 0;
+    font-size:14px;
+  }
+  .pit b{color:var(--warn);}
+
+  .no{color:var(--warn);}
+  .yes{color:var(--accent);font-weight:600;}
+
+  ul.tight{margin:8px 0 12px;padding-left:22px;}
+  ul.tight li{margin-bottom:5px;}
+
+  .flow{
+    font-family:"SF Mono",Menlo,Consolas,monospace;
+    font-size:13px;
+    background:#f0ede6;
+    padding:12px 15px;
+    border-radius:4px;
+    white-space:pre;
+    overflow-x:auto;
+    line-height:1.7;
+    margin:12px 0;
+  }
+
+  details{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:12px 16px;
+    margin-bottom:9px;
+  }
+  details summary{
+    cursor:pointer;
+    font-weight:600;
+    font-size:14.5px;
+    list-style:none;
+  }
+  details summary::-webkit-details-marker{display:none;}
+  details summary::before{
+    content:"▸ ";
+    color:var(--accent);
+  }
+  details[open] summary::before{content:"▾ ";}
+  details .ans{
+    margin-top:9px;
+    padding-top:9px;
+    border-top:1px dashed var(--line);
+    font-size:14px;
+    color:var(--ink-2);
+  }
+  details .ans b{color:var(--accent);}
+
+  footer{
+    margin-top:44px;
+    padding-top:18px;
+    border-top:1px solid var(--line);
+    color:var(--ink-3);
+    font-size:13px;
+  }
+
+  .back{
+    display:inline-block;margin-bottom:16px;
+    font-size:13px;color:var(--ink-3);text-decoration:none;
+    border-bottom:1px solid var(--line);padding-bottom:1px;
+    transition:color .15s,border-color .15s;
+  }
+  .back:hover{color:var(--accent);border-color:var(--accent);}
+
+  @media (max-width:640px){
+    body{padding:26px 14px 56px;font-size:14.5px;}
+    h1{font-size:20px;}
+    .wrap{max-width:100%;}
+    th,td{padding:6px 8px;font-size:13px;line-height:1.6;}
+    table{font-size:13px;}
+    .back{margin-bottom:12px;}
+  }
+
+  @media print{
+    body{background:#fff;padding:0;font-size:11.5pt;}
+    details{break-inside:avoid;}
+    table{break-inside:avoid;}
+    details{border:none;padding:0;}
+    details .ans{display:block;}
+    .back{display:none;}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="index.html">← 返回目录</a>
+
+<header class="title">
+  <h1>日语语法复习 · たら / に / と / そうだ / 意志形</h1>
+  <div class="sub">合并 11-25、11-26 两天 · 共 13 个语法点 · 按主题重组，非时间顺序</div>
+</header>
+
+<!-- ============ 01 ============ -->
+<section>
+  <h2><span class="num">01</span><span class="day">11-25</span>たら 的三套接法</h2>
+
+  <p class="muted">会社で<br>
+  山下：森さん、ちょっとそうだんしたいことがあるんですが、あした時間がありますか。<br>
+  森：ええ。4時まで<b>だったら いつでも だいじょうぶ</b>ですよ。<br>
+  → 到 4 点为止的话，随时都没问题。</p>
+
+  <table>
+    <tr><th style="width:26%">前面是什么</th><th style="width:26%">接法</th><th>例</th></tr>
+    <tr><td>名词</td><td><b>だったら</b></td><td class="jp">学生だったら</td></tr>
+    <tr><td>名词＋助词</td><td><b>だったら</b></td><td class="jp">4時までだったら、明日からだったら</td></tr>
+    <tr><td>な形容词</td><td><b>だったら</b></td><td class="jp">静かだったら</td></tr>
+    <tr><td><b>い形容词</b></td><td><b>かったら</b></td><td class="jp">大きかったら</td></tr>
+    <tr><td><b>动词</b></td><td><b>たら</b></td><td class="jp">行ったら、買ったら</td></tr>
+  </table>
+
+  <div class="key">
+    <b>判据一句话：前面这个词要不要「だ」。</b><br>
+    要 <code>だ</code>（名词、な形容词）→ 把 <code>だ</code> 换成 <code>だったら</code>；<br>
+    不要 <code>だ</code>（い形容词、动词）→ 用 <code>かったら</code> ／ <code>たら</code>。
+  </div>
+
+  <h3>「です」测试：现场最快的判断法</h3>
+  <p class="muted">在候选词后面加「です」，通就能接 <code>だったら</code>。</p>
+  <table>
+    <tr><th style="width:30%">候选</th><th style="width:26%">加 です</th><th>能接 だったら</th></tr>
+    <tr><td class="jp">4時まで</td><td class="jp">4時までです ✓</td><td><span class="yes">✓</span></td></tr>
+    <tr><td class="jp">学生</td><td class="jp">学生です ✓</td><td><span class="yes">✓</span></td></tr>
+    <tr><td class="jp">静か</td><td class="jp">静かです ✓</td><td><span class="yes">✓</span></td></tr>
+    <tr><td class="jp">いつでも</td><td class="jp">いつでもです ✗</td><td><span class="no">✗</span></td></tr>
+    <tr><td class="jp">だれでも</td><td class="jp">だれでもです ✗</td><td><span class="no">✗</span></td></tr>
+  </table>
+
+  <div class="key">
+    <b>「です」和「だったら」是同一套逻辑</b>：都是把一个“东西”拿来做判断。<br>
+    <span class="jp">なら</span> 也守同一条规矩：4時までなら ✓ ／ いつでもなら ✗
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section>
+  <h2><span class="num">02</span><span class="day">11-25</span>でも 不是转折 + 疑问词＋でも 不能接 だ</h2>
+
+  <p class="muted">这题选项里 B 的注释写「但是；不过」，那是 <code>でも</code> 单独作接续词时的意思。本句里它是 <span class="jp">いつ</span> + <span class="jp">でも</span> 的后半截。</p>
+
+  <div class="pit">
+    <b>看到“但是”就排除它，正好中招。</b><br>
+    <span class="jp">いつでも</span> ＝ 随时（副词），不是“いつ + 助词でも”。
+  </div>
+
+  <h3>为什么 まで 能接、でも 不能</h3>
+  <table>
+    <tr><th style="width:26%">说法</th><th>整段是什么</th><th>判断</th></tr>
+    <tr><td class="jp">4時まで</td><td>格助词贴在名词后，整段仍是<b>名词性</b>（回答“到几点”）</td><td><span class="yes">✓</span> 受付は4時までです</td></tr>
+    <tr><td class="jp">いつでも</td><td><b>固定副词</b>（词典条目就是副词），回答“什么时候”</td><td><span class="no">✗</span> 受付はいつでもです</td></tr>
+  </table>
+
+  <div class="key">
+    <b>不是“助词能加、副词不能加”，而是：整段是不是一个“东西”。</b><br>
+    疑问词＋でも 全族——いつでも／だれでも／どこでも／何でも——一个都不能接 <code>だ</code>。<br>
+    它们是用来修饰后面谓语的（いつでも大丈夫），不是用来被判断的。
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section>
+  <h2><span class="num">03</span><span class="day">11-25</span>排序题：能塞进去 ≠ 能接上</h2>
+
+  <p class="muted">当时排的「4時まで いつ でも だったら だいじょうぶ」——四个词位置全对，但 <span class="jp">だったら</span> 接不上 <span class="jp">いつでも</span>。</p>
+
+  <div class="key">
+    <b>两步走：</b><br>
+    ① 先按意思排出顺序（谁是条件、谁是谓语、哪两个词该连成一个词）<br>
+    ② 再用<b>接续</b>验一遍（だったら 前面必须是要 <code>だ</code> 的那一类）
+  </div>
+
+  <h3>附：判据是“名词化”，不是“辞书形”</h3>
+  <table>
+    <tr><th style="width:44%">说法</th><th>判断</th></tr>
+    <tr><td class="jp">行く<b>だったら</b></td><td><span class="no">✗</span> 还是动词</td></tr>
+    <tr><td class="jp">行く<b>ことだったら</b></td><td><span class="yes">✓</span> 加了 こと，成了“东西”</td></tr>
+  </table>
+  <p class="muted"><b>辞书形</b>只是查词典那一栏（行く、食べる、大きい），名词没有辞书形这一说，所以它当不了判据；
+  <b>名词化</b>（套 こと／の／さ）才是真正的判据。</p>
+</section>
+
+<!-- ============ 04 ============ -->
+<section>
+  <h2><span class="num">04</span><span class="day">11-26</span>に 的两副面孔：用途 ／ 结果状态</h2>
+
+  <h3>① 用途：名词 ＋ に ＋ 使う</h3>
+  <p class="muted">このレストランでは、料理<b>に</b>使う野菜を庭で育てています。<br>
+  → 这家餐厅在院子里种做菜用的蔬菜。</p>
+  <table>
+    <tr><th style="width:40%">说法</th><th>意思</th></tr>
+    <tr><td class="jp">料理<b>に</b>使う</td><td>用于做菜</td></tr>
+    <tr><td class="jp">勉強<b>に</b>使う</td><td>用于学习</td></tr>
+    <tr><td class="jp">何<b>に</b>使いますか</td><td>用来做什么</td></tr>
+  </table>
+  <div class="key">
+    <b>方向别搞反：</b><span class="jp">野菜<b>を</b>料理<b>に</b>使う</span>（把蔬菜用于做菜）<br>
+    <b>を</b>＝被使用的东西，<b>に</b>＝用途。中文“用蔬菜做菜”里的“用”是日语的反方向。
+  </div>
+
+  <h3>② 结果状态：名词／な形容词 ＋ に ＋ する</h3>
+  <p class="muted">大切<b>に</b>します。→ 我会好好珍惜的。（收礼物时的标准答谢）</p>
+  <table>
+    <tr><th style="width:40%">说法</th><th>意思</th></tr>
+    <tr><td class="jp">大切<b>に</b>する</td><td>当作重要的 → 珍惜</td></tr>
+    <tr><td class="jp">部屋をきれい<b>に</b>する</td><td>把房间弄干净</td></tr>
+    <tr><td class="jp">無駄<b>に</b>する</td><td>浪费</td></tr>
+    <tr><td class="jp">静か<b>に</b>する</td><td>保持安静</td></tr>
+  </table>
+
+  <h3>四基础动词的分工</h3>
+  <table>
+    <tr><th style="width:22%">动词</th><th style="width:28%">性质</th><th>接 に 后</th></tr>
+    <tr><td class="jp"><b>する</b></td><td>做（人为改变）</td><td class="jp">～にする ＝ 使变成／当作</td></tr>
+    <tr><td class="jp"><b>なる</b></td><td>变成（自然变化）</td><td class="jp">～になる ＝ 变成……</td></tr>
+    <tr><td class="jp"><b>ある</b></td><td>有（无生命）</td><td class="jp">～にある ＝ 存在于（场所）</td></tr>
+    <tr><td class="jp"><b>いる</b></td><td>在（有生命）</td><td class="jp">～にいる ＝ 存在于（场所，人或动物）</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>大切にします 用现在时</b>——表示“我今后会珍惜”，是<b>承诺</b>不是叙述，所以不能用 ました。
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section>
+  <h2><span class="num">05</span><span class="day">11-26</span>の 什么时候能替 が</h2>
+
+  <p class="muted">「料理<b>の</b>使う野菜」为什么不成立——他的分析（<code>使う野菜</code> 是名词短语）是对的，问题在另一层。</p>
+
+  <h3>の 可以进定语从句，但进去以后就变成 が</h3>
+  <table>
+    <tr><th style="width:34%">原句</th><th style="width:30%">换成 が</th><th>通不通</th></tr>
+    <tr><td class="jp">雨<b>の</b>降る日</td><td class="jp">雨<b>が</b>降る日</td><td><span class="yes">✓</span> 雨会下</td></tr>
+    <tr><td class="jp">私<b>の</b>書いた本</td><td class="jp">私<b>が</b>書いた本</td><td><span class="yes">✓</span> 我写的</td></tr>
+    <tr><td class="jp">料理<b>の</b>使う野菜</td><td class="jp">料理<b>が</b>使う野菜</td><td><span class="no">✗</span> 菜不会使用</td></tr>
+  </table>
+
+  <div class="key">
+    <b>判断动作：看到 <code>の</code>，就读成 <code>が</code>。</b><br>
+    通得过才能用 <code>の</code>。这道题一换成 <code>が</code>，<code>料理</code> 就成了“使用者”，语义直接崩掉。
+  </div>
+
+  <h3>三种 の 分清</h3>
+  <table>
+    <tr><th style="width:30%">用法</th><th style="width:30%">例</th><th>换成 が 之后</th></tr>
+    <tr><td>所属</td><td class="jp">私<b>の</b>本</td><td><span class="no">✗</span> 私が本</td></tr>
+    <tr><td>修饰（名词＋名词）</td><td class="jp">日本語<b>の</b>本</td><td>—</td></tr>
+    <tr><td>从句主语替身</td><td class="jp">雨<b>の</b>降る日</td><td><span class="yes">✓</span> 成立</td></tr>
+  </table>
+</section>
+
+<!-- ============ 06 ============ -->
+<section>
+  <h2><span class="num">06</span><span class="day">11-26</span>て形表原因，接情感词</h2>
+
+  <p class="muted">ふじ山にはずっと<b>のぼりたかった</b>のですが、<b>のぼることができて</b>、<b>うれしかった</b>です。<br>
+  → 一直很想爬富士山，（这次）能爬上去，真高兴。</p>
+
+  <div class="flow">① のぼりたかった（心愿）→ ② できて（实现）→ ③ うれしかった（反应）</div>
+
+  <table>
+    <tr><th style="width:44%">例句</th><th>意思</th></tr>
+    <tr><td class="jp">会え<b>て</b>、うれしいです</td><td>能见到你，很高兴</td></tr>
+    <tr><td class="jp">合格し<b>て</b>、安心しました</td><td>合格了，放心了</td></tr>
+    <tr><td class="jp">もらっ<b>て</b>、うれしかった</td><td>收到了，很高兴</td></tr>
+  </table>
+
+  <div class="key">
+    <b>“因为某件事，心里产生了反应” → 用 て形连接。</b><br>
+    这是日语最常见的情感表达方式。
+  </div>
+
+  <div class="pit">
+    <b>为什么不是 から：</b><code>から</code> 要求前后是真正的因果。<br>
+    <span class="no">✗</span> <span class="jp">ずっと のぼりたかった<b>から</b>、のぼることができて…</span>（“因为想爬，所以能爬上去”——想不会让你变得能）<br>
+    <span class="yes">✓</span> <span class="jp">毎日練習した<b>から</b>、のぼることができました</span>
+  </div>
+
+  <p class="muted"><b>拆解：</b><span class="jp">のぼるのが好きで</span>（で＝并列）、<span class="jp">のぼりたかった</span>（たい的过去）、<span class="jp">のぼることができて</span>（可能＋ことができる）。</p>
+</section>
+
+<!-- ============ 07 ============ -->
+<section>
+  <h2><span class="num">07</span><span class="day">11-26</span>と 的两种身份：引用 ／ 条件</h2>
+
+  <p class="muted">外国に住んでいる<b>友達が</b> <b>けっこんすると</b> <b>聞いたので</b>、<b>プレゼントを送ろうと</b> 思う。<br>
+  → 听说住在国外的朋友要结婚了，所以想送份礼物。</p>
+
+  <table>
+    <tr><th style="width:34%"><code>と</code> 后面接什么</th><th><code>と</code> 的作用</th><th>例</th></tr>
+    <tr><td>聞く／言う／思う／答える</td><td><b>引用</b>（内容）</td><td class="jp">けっこんする<b>と</b>聞いた</td></tr>
+    <tr><td>一般动词</td><td><b>条件</b>（如果／一…就）</td><td class="jp">春になる<b>と</b>花が咲く</td></tr>
+  </table>
+
+  <div class="key">
+    <b>先看 <code>と</code> 后面那个动词，身份立刻确定。</b><br>
+    <code>けっこんすると</code> 看着像条件，但后面是 <code>聞いた</code>，所以是引用。
+  </div>
+
+  <h3>排序的三把锁</h3>
+  <table>
+    <tr><th style="width:16%">位置</th><th style="width:26%">词</th><th>依据</th></tr>
+    <tr><td>第 1 格</td><td class="jp"><b>友達が</b></td><td><span class="jp">外国に住んでいる</span> 修饰 <span class="jp">友達</span>，两者必须相邻</td></tr>
+    <tr><td>第 2 格</td><td class="jp"><b>けっこんすると</b></td><td><code>と</code> 前面必须有被引用的内容，<code>聞いた</code> 要接在后面</td></tr>
+    <tr><td>第 3 格 ★</td><td class="jp"><b>聞いたので</b></td><td>原因句在结论之前</td></tr>
+    <tr><td>第 4 格</td><td class="jp"><b>プレゼントを送ろうと</b></td><td><b>结尾是 思う，第 4 格必然是 <code>～（よ）うと</code></b>——拆不开</td></tr>
+  </table>
+
+  <p class="muted"><code>友達がけっこんする</code> 是被引用的小句子，<b>从句主语用 が</b>——与「木村さん<b>が</b>着ていたシャツ」「田中さん<b>が</b>送ってくれたカード」同一条规则。</p>
+</section>
+
+<!-- ============ 08 ============ -->
+<section>
+  <h2><span class="num">08</span><span class="day">11-26</span>意志形：一二三类 ＋ 六个例外</h2>
+
+  <table>
+    <tr><th style="width:22%">类别</th><th style="width:30%">规则</th><th>例</th></tr>
+    <tr><td><b>一类（五段）</b></td><td>词尾 u → o 段 ＋ う</td><td class="jp">書く→書こう、読む→読もう、話す→話そう、待つ→待とう、遊ぶ→遊ぼう、買う→買おう、取る→取ろう</td></tr>
+    <tr><td><b>二类（一段）</b></td><td>去 <code>る</code> ＋ よう</td><td class="jp">食べる→食べよう、見る→見よう、起きる→起きよう</td></tr>
+    <tr><td><b>三类</b></td><td>する→しよう／来る→こよう</td><td class="jp">勉強する→勉強しよう</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>长得像二类、其实是一类的六个（必背）：</b><br>
+    <span class="jp">帰る→帰<b>ろ</b>う</span>　<span class="jp">入る→入<b>ろ</b>う</span>　<span class="jp">走る→走<b>ろ</b>う</span>　
+    <span class="jp">切る→切<b>ろ</b>う</span>　<span class="jp">知る→知<b>ろ</b>う</span>　<span class="jp">要る→要<b>ろ</b>う</span><br>
+    <span class="no">✗</span> 帰よう／入よう／走よう
+  </div>
+
+  <h3>意志形的三种用法</h3>
+  <table>
+    <tr><th style="width:34%">句型</th><th>意思</th><th>例</th></tr>
+    <tr><td>单独用</td><td>自言自语“我要…”</td><td class="jp">そろそろ寝よう。</td></tr>
+    <tr><td><b>～う／ようと思う</b></td><td>打算</td><td class="jp">プレゼントを送ろうと思う</td></tr>
+    <tr><td><b>～う／ようとする</b></td><td>想要／正要</td><td class="jp">出かけようとした時、電話が来た</td></tr>
+  </table>
+
+  <p class="muted">礼貌体对应：意志形（書こう）↔ <span class="jp">ましょう</span>（書きましょう）。</p>
+</section>
+
+<!-- ============ 09 ============ -->
+<section>
+  <h2><span class="num">09</span><span class="day">11-26</span>きっと ＋ でしょう，不是 んです</h2>
+
+  <p class="muted">森さんは 花が 好きだから、きっと <b>よろこぶでしょう</b>。<br>
+  → 森喜欢花，所以一定会很高兴吧。</p>
+
+  <h3>んです 与 でしょう 的分工</h3>
+  <table>
+    <tr><th style="width:16%"></th><th style="width:38%">んです／のです</th><th>でしょう</th></tr>
+    <tr><td>作用</td><td><b>说明、解释</b></td><td><b>推测</b></td></tr>
+    <tr><td>回答什么</td><td>为什么？</td><td>会怎样？</td></tr>
+    <tr><td>常搭配</td><td>どうして、～から</td><td><b>きっと</b>、たぶん、おそらく</td></tr>
+    <tr><td>例子</td><td class="jp">風邪をひいた<b>んです</b></td><td class="jp">風邪をひく<b>でしょう</b></td></tr>
+  </table>
+
+  <div class="key">
+    <b><code>きっと</code> 是推量副词，不是“确定”。</b>它只能配推测：でしょう／はずだ／にちがいない／と思う。<br>
+    <span class="no">✗</span> きっと来る<b>んです</b>
+  </div>
+
+  <h3>关键：から 有两种角色</h3>
+  <table>
+    <tr><th style="width:26%">角色</th><th style="width:34%">结构</th><th>例</th></tr>
+    <tr><td>说明的理由</td><td>理由 <b>から</b> ＋ 结论 <b>んです</b></td><td class="jp">足が痛いから、歩けないんです</td></tr>
+    <tr><td><b>推测的依据</b></td><td>依据 <b>から</b> ＋ 推断 <b>でしょう</b></td><td class="jp">日曜日だから、店は込むでしょう</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>三个错项：</b><br>
+    <span class="jp">よろこぶそうです</span>＝伝聞（听说），句子是推断出来的，没有信息来源。<br>
+    <span class="jp">よろこんだようです</span>＝好像高兴<b>了</b>，过去时，生日还没到。<br>
+    <span class="jp">よろこびそうです</span> 才是“看起来会高兴”——和 よろこぶそうです 只差一个假名。
+  </div>
+</section>
+
+<!-- ============ 10 ============ -->
+<section>
+  <h2><span class="num">10</span><span class="day">11-26</span>なかなか ＋ 否定／会えない vs 会わない</h2>
+
+  <p class="muted">最近、私は仕事がいそがしくて なかなか ともだちと <b>会えない</b>。<br>
+  → 最近工作很忙，一直没能和朋友见面。</p>
+
+  <table>
+    <tr><th style="width:26%">用法</th><th>例句</th><th>意思</th></tr>
+    <tr><td><b>＋ 否定</b></td><td class="jp">なかなか来ない</td><td>迟迟不来</td></tr>
+    <tr><td><b>＋ 肯定</b></td><td class="jp">この店はなかなかいい</td><td>这店相当不错</td></tr>
+  </table>
+
+  <div class="key">
+    <b>同一个词，看句尾定意思。</b>句尾否定＝怎么也不；句尾肯定＝相当。
+  </div>
+
+  <h3>会えない 与 会わない</h3>
+  <table>
+    <tr><th style="width:30%">形式</th><th style="width:34%">语法</th><th>意思</th></tr>
+    <tr><td class="jp"><b>会えない</b></td><td>可能形（会える）的否定</td><td><b>见不到</b>（客观不允许）</td></tr>
+    <tr><td class="jp">会わない</td><td>一般否定</td><td><b>不见</b>（主观不打算）</td></tr>
+  </table>
+
+  <h3>五段动词的可能形：词尾改え段 ＋ る</h3>
+  <table>
+    <tr><th style="width:30%">原形</th><th style="width:30%">可能形</th><th>否定</th></tr>
+    <tr><td class="jp">会う</td><td class="jp">会<b>え</b>る</td><td class="jp">会えない</td></tr>
+    <tr><td class="jp">書く</td><td class="jp">書<b>け</b>る</td><td class="jp">書けない</td></tr>
+    <tr><td class="jp">読む</td><td class="jp">読<b>め</b>る</td><td class="jp">読めない</td></tr>
+  </table>
+
+  <p class="muted"><b>同族否定呼应副词：</b>あまり（不太）、全然（完全不）、少しも（一点也不）、めったに（很少）、とても（怎么也…不）。<br>
+  <b>与人见面：</b><span class="jp">友だち<b>と</b>会う</span> ✓　<span class="jp">友だち<b>に</b>会う</span> ✓（に 更强调朝向对方）。</p>
+</section>
+
+<!-- ============ 11 ============ -->
+<section>
+  <h2><span class="num">11</span><span class="day">11-26</span>中（ちゅう）vs とき／ごろ／間</h2>
+
+  <p class="muted">今朝 さんぽ<b>中に</b>、かわいい ねこを 見ました。<br>
+  → 今天早上在散步途中，看到了一只可爱的猫。</p>
+
+  <table>
+    <tr><th style="width:22%">词</th><th style="width:30%">接续</th><th>意思</th></tr>
+    <tr><td class="jp"><b>中（ちゅう）</b></td><td><b>名词 ＋ 中</b></td><td>正在……的过程中（散歩中、会議中、授業中）</td></tr>
+    <tr><td class="jp">とき</td><td>动词／名词＋<b>の</b></td><td>时候（散歩するとき、散歩<b>の</b>とき）</td></tr>
+    <tr><td class="jp">ごろ</td><td><b>时间词</b> ＋ ごろ</td><td>大约某时刻（3時ごろ）</td></tr>
+    <tr><td class="jp">間（あいだ）</td><td>名词＋<b>の</b>＋間</td><td>有起止的期间（夏休みの間）</td></tr>
+  </table>
+
+  <div class="pit">
+    <b>ときに 并不是意思不对，而是接不上：</b><br>
+    <span class="yes">✓</span> <span class="jp">散歩<b>の</b>ときに</span>　
+    <span class="no">✗</span> <span class="jp">散歩ときに</span>（括号前面没有 <code>の</code>）
+  </div>
+
+  <h3>中 的两种读法</h3>
+  <table>
+    <tr><th style="width:26%">读法</th><th style="width:30%">意思</th><th>例</th></tr>
+    <tr><td class="jp"><b>ちゅう</b></td><td>某个动作<b>正在进行</b></td><td class="jp">会議中、授業中、営業中、散歩中</td></tr>
+    <tr><td class="jp"><b>じゅう</b></td><td><b>整个范围／整段</b></td><td class="jp">世界中、一日中、家中</td></tr>
+  </table>
+
+  <p class="muted"><b>中 vs 中に：</b>「散歩中、猫を見た」＝在散步这个状态里；「散歩中<b>に</b>、猫を見た」＝在途中某一刻。<b><code>に</code> 把过程切成一个时点</b>，配一次性动作最自然。</p>
+</section>
+
+<!-- ============ 12 ============ -->
+<section>
+  <h2><span class="num">12</span><span class="day">11-26</span>によると ＋ そうだ（传闻框架）</h2>
+
+  <p class="muted">母<b>の</b>話<b>によると</b>、私は小さいとき、この絵本が大好きだった<b>そうだ</b>。<br>
+  → 据妈妈说的话，我小时候非常喜欢这本绘本。</p>
+
+  <table>
+    <tr><th style="width:30%">前半</th><th>后半</th></tr>
+    <tr><td><b>によると</b>（据……）</td><td><b>そうだ</b>（听说）</td></tr>
+  </table>
+
+  <div class="key">
+    <b>一对搭档，一个开一个收。</b><br>
+    <span class="jp">天気予報<b>によると</b>、明日は雨だ<b>そうだ</b>。</span>
+  </div>
+
+  <div class="pit">
+    <b>によると 后面只能接传闻，不能接自己的判断：</b><br>
+    <span class="no">✗</span> <span class="jp">母の話によると、私は行きたい</span><br>
+    <span class="yes">✓</span> <span class="jp">母の話によると、私は行ったそうだ</span>
+  </div>
+
+  <h3>句中另外三个语法</h3>
+  <table>
+    <tr><th style="width:30%">部分</th><th>规则</th></tr>
+    <tr><td class="jp">母<b>の</b>話</td><td>名词＋の＋名词，可以多层叠（母の友だち<b>の</b>話）</td></tr>
+    <tr><td class="jp">小さ<b>い</b>とき</td><td>い形容词直接接 とき，不用 の（名词才要：子供<b>の</b>とき）</td></tr>
+    <tr><td class="jp">大好き<b>だった</b></td><td>な形容词过去＝だった；そうだ 接的是 <b>だった</b></td></tr>
+  </table>
+
+  <p class="muted"><span class="jp">好き・嫌い・上手・下手・ほしい</span> 这一族都带 <b>が</b>，因为它们表状态与好恶，不是动作。</p>
+</section>
+
+<!-- ============ 13 ============ -->
+<section>
+  <h2><span class="num">13</span><span class="day">11-26</span>伝聞そうだ vs 様態そうだ：尾巴在不在</h2>
+
+  <p class="muted">唯一要问的：<b><code>そう</code> 前面是“完整形”还是“词干”。</b></p>
+
+  <table>
+    <tr><th style="width:34%"><code>そう</code> 前面是什么</th><th>判断</th></tr>
+    <tr><td><b>完整的词形</b>（该有的尾巴还在）</td><td><b>听说</b>（伝聞）</td></tr>
+    <tr><td><b>词干</b>（尾巴被削掉了）</td><td><b>看起来</b>（様態）</td></tr>
+  </table>
+
+  <table>
+    <tr><th style="width:24%">词类</th><th style="width:38%">完整形（听说）</th><th>词干（看起来）</th></tr>
+    <tr><td>动词</td><td class="jp">降<b>る</b>そうだ</td><td class="jp">降りそうだ</td></tr>
+    <tr><td>い形容词</td><td class="jp">おいし<b>い</b>そうだ</td><td class="jp">おいしそうだ</td></tr>
+    <tr><td>な形容词</td><td class="jp">元気<b>だ</b>そうだ</td><td class="jp">元気そうだ</td></tr>
+  </table>
+
+  <div class="key">
+    <b>看 <code>そう</code> 前面最后一个字符：<code>る</code>／<code>い</code>／<code>だ</code> 还在 → 听说；没了 → 看起来。</b><br>
+    三行是同一个动作：<b>削掉尾巴 ＝ 只剩表面</b>。
+  </div>
+
+  <h3>为什么是这个逻辑</h3>
+  <ul class="tight">
+    <li><b>听说</b>：把别人的一整句话原样转述，所以那句话是<b>完整</b>的。</li>
+    <li><b>看起来</b>：你只是看着外观猜，手里没有完整信息，所以只剩<b>词干</b>。</li>
+  </ul>
+
+  <h3>三对最小对比（读出声）</h3>
+  <table>
+    <tr><th style="width:50%">听说</th><th>看起来</th></tr>
+    <tr><td class="jp">雨が降<b>る</b>そうだ</td><td class="jp">雨が降りそうだ</td></tr>
+    <tr><td class="jp">このケーキはおいし<b>い</b>そうだ</td><td class="jp">おいしそうだ</td></tr>
+    <tr><td class="jp">田中さんは元気<b>だ</b>そうだ</td><td class="jp">元気そうだ</td></tr>
+  </table>
+
+  <div class="key">
+    <b>捷径：</b>句子前面出现 <span class="jp">によると</span>、<span class="jp">話では</span>、<span class="jp">天気予報では</span> → 直接就是听说，不用再看词形。
+  </div>
+</section>
+
+<!-- ============ 14 ============ -->
+<section>
+  <h2><span class="num">14</span>两天的错因归纳</h2>
+
+  <table>
+    <tr><th style="width:26%">错因类型</th><th style="width:36%">当时怎么想岔的</th><th>下次怎么防</th></tr>
+    <tr><td><b>① 位置塞得进去就以为对</b></td><td>四个词顺序看着通，但 <span class="jp">だったら</span> 接不上 <span class="jp">いつでも</span></td><td>排完再用<b>接续</b>验一遍，能塞 ≠ 能接</td></tr>
+    <tr><td><b>② 看注释选词</b></td><td><span class="jp">でも</span> 的注释写“但是”，就当转折排除了</td><td>注释只给一个义项，先看它在句中跟谁连</td></tr>
+    <tr><td><b>③ 用"主语"解释一切</b></td><td>知道 <span class="jp">の</span> 能进从句，但没验"换回 <code>が</code> 后通不通"</td><td>看到 <code>の</code> 就读成 <code>が</code>，通得过才能用</td></tr>
+    <tr><td><b>④ 有 <code>から</code> 就以为要“解释”</b></td><td>把 <span class="jp">きっと</span> 当成“确定”，于是配了 <span class="jp">んです</span></td><td><span class="jp">から</span> 可当“依据”，后面照样能接推测</td></tr>
+    <tr><td><b>⑤ 记词义不记条件</b></td><td><span class="jp">なかなか</span> 只记“相当”，没记“＋否定＝怎么也不”</td><td>副词要连<b>句尾要求</b>一起记</td></tr>
+  </table>
+
+  <div class="key">
+    <b>共同点：</b>没有一道是“不认识词”。全是<b>判断入口错了</b>——先看了词义，没先看条件。<br>
+    接续、句尾、助词身份、词形尾巴，这四样才是入口。
+  </div>
+</section>
+
+<!-- ============ 15 ============ -->
+<section>
+  <h2><span class="num">15</span>自测 12 题（覆盖两天）</h2>
+  <p class="muted">先做完 12 题再对答案。</p>
+
+  <details><summary>1. 4時まで＿＿＿、いつでも だいじょうぶです。</summary>
+    <div class="ans"><b>だったら</b>　<code>4時まで</code> 加「です」通得过 → 名词性 → だったら。</div></details>
+
+  <details><summary>2. 静か＿＿＿、勉強できます。</summary>
+    <div class="ans"><b>だったら</b>　な形容词要 だ → だったら。</div></details>
+
+  <details><summary>3. 大き＿＿＿、れいぞうこに 入りません。</summary>
+    <div class="ans"><b>かったら</b>　い形容词不要 だ → かったら。</div></details>
+
+  <details><summary>4. この野菜は 料理＿＿＿ 使います。</summary>
+    <div class="ans"><b>に</b>　用途。「野菜<b>を</b>料理<b>に</b>使う」——を 是被用的东西，に 是用途。</div></details>
+
+  <details><summary>5. プレゼントは 大切＿＿＿ します。</summary>
+    <div class="ans"><b>に</b>　な形容词＋に＋する＝当作…对待；大切にする＝珍惜。</div></details>
+
+  <details><summary>6. 友だちに 会え＿＿＿、うれしかったです。</summary>
+    <div class="ans"><b>て</b>　て形表原因，接情感词（～て、うれしい）。</div></details>
+
+  <details><summary>7. 雨が 降る＿＿＿ 聞きました。</summary>
+    <div class="ans"><b>と</b>　<code>と</code> 后接 聞く＝引用（听说会下雨）。</div></details>
+
+  <details><summary>8. 外国の 友だちに プレゼントを 送＿＿＿ 思います。</summary>
+    <div class="ans"><b>ろうと</b>　送る（一类）→ 送ろう＋と＋思う＝打算送。</div></details>
+
+  <details><summary>9. 花が 好きだから、きっと よろこぶ＿＿＿。</summary>
+    <div class="ans"><b>でしょう</b>　<code>きっと</code> 只能配推测；<code>んです</code> 是说明，不是推测。</div></details>
+
+  <details><summary>10. 忙しくて、＿＿＿ 友だちと 会えません。</summary>
+    <div class="ans"><b>なかなか</b>　なかなか＋否定＝怎么也不、一直没能。</div></details>
+
+  <details><summary>11. 今朝 さんぽ＿＿＿ に、ねこを 見ました。</summary>
+    <div class="ans"><b>中（ちゅう）</b>　名词直接接 中；用 とき 要写「散歩<b>の</b>ときに」。</div></details>
+
+  <details><summary>12. このケーキは＿＿＿＿。（看起来很好吃）</summary>
+    <div class="ans"><b>おいしそうだ</b>　様態：去掉 <code>い</code>，只剩词干。</div></details>
+</section>
+
+<footer>
+  复习建议：今天做一遍 → 三天后再做一遍自测 → 一周后只看第 14 节的五条错因。<br>
+  两天的失分都指向同一件事：<b>先看条件，再看意思</b>——接续、句尾、助词身份、词形尾巴。
+</footer>
+
+</div>
+</body>
+</html>
