@@ -17,7 +17,11 @@ git add -A
 if git diff --cached --quiet; then
   echo "· 没有新内容，跳过提交"
 else
-  git commit -q -m "更新 $(date +%Y-%m-%d) 语法复习"
+  # 用最新那份页面的日期做提交信息，避免隔天补推时日期错位
+  LATEST="$(ls -1 [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9].html 2>/dev/null | sort | tail -1)"
+  STAMP="${LATEST%.html}"
+  [ -z "$STAMP" ] && STAMP="$(date +%Y-%m-%d)"
+  git commit -q -m "更新 ${STAMP} 语法复习"
   echo "· 已提交 $(git rev-parse --short HEAD)"
 fi
 
